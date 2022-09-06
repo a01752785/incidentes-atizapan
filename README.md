@@ -13,3 +13,4 @@ El equipo de desarrollo ha planeado construir una aplicación móvil para el sis
 - Nginx
 - Node
 - Por definir (PocketBase, SupaBase, FireBase)
+- gRPC
