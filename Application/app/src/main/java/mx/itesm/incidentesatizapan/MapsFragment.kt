@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -13,8 +14,16 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import mx.itesm.incidentesatizapan.databinding.FragmentMapsBinding
 
+/**
+ * @author: David Damian
+ * The View for the maps fragment, which will be used to display local incidents.
+ */
 class MapsFragment : Fragment() {
+
+    private val viewModel: MapsViewModel by viewModels()
+    private lateinit var binding: FragmentMapsBinding
 
     private val callback = OnMapReadyCallback { googleMap ->
         /**
@@ -36,7 +45,8 @@ class MapsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_maps, container, false)
+        binding = FragmentMapsBinding.inflate(layoutInflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

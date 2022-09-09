@@ -34,7 +34,8 @@ class MainFragment : Fragment() {
 
     private fun registerEvents() {
         binding.btnMapa.setOnClickListener {
-            findNavController().navigate(MainFragmentDirections.actionMainFragmentToMapsFragment())
+            findNavController().navigate(
+                MainFragmentDirections.actionMainFragmentToMapsFragment())
         }
     }
 
