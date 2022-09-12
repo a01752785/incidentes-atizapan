@@ -1,12 +1,14 @@
 plugins {
     id 'com.android.application'
+    //Firebase Initial Config
+    id 'com.google.gms.google-services'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
     id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "mx.itesm.incidentesatizapan"
@@ -37,6 +39,12 @@ android {
 }
 
 dependencies {
+    //Firebase Initial Config
+    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+
+    //Firebase Dependencies
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-messaging'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.0'
