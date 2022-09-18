@@ -3,6 +3,7 @@ package mx.itesm.incidentesatizapan
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.FirebaseMessagingService
+import com.google.firebase.messaging.RemoteMessage
 
 /**
  * @author Sebastian Mora
@@ -18,6 +19,11 @@ class PushNotificationService : FirebaseMessagingService(){
     override fun onNewToken(token: String) {
         super.onNewToken(token)
         Log.wtf("PushNotification","New Token : $token")
+    }
+
+    override fun onMessageReceived(message: RemoteMessage) {
+        super.onMessageReceived(message)
+
     }
 
 }

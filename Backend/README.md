@@ -2,16 +2,14 @@
 This is where all the code that qualifies as the Backend of the project is housed.
 
 ## Technology We Use For Now
-- Firebase (Cloud Functions, Messaging, Authentication)
-- Node v16
+- Firebase FCM
+- Node v18.7.0
 
 ## API
 
-### Firebase Funtions
-For now, all the API is developed with Firebase Cloud Functions, the source code can be found in the Firebase folder.
 
 #### Installation 
-If you just cloned the repository, run the following commands in the path :  _incidentes-atizapan/Backend/FireBase/functions_
+If you just cloned the repository, run the following commands in the path :  _incidentes-atizapan/Backend/_
 
 ```
 #Install the firebase tools globally
@@ -25,7 +23,7 @@ npm install
 ```
 
 #### Running Local Tests
-To test the functions, use the command
+To test the API, use the command
 ```
 #This command will compile the TS code into JS, take that into account
 npm run serve 
@@ -37,10 +35,4 @@ export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json"
 #Windows
 set GOOGLE_APPLICATION_CREDENTIALS=path\to\key.json
 
-```
-
-#### Deploying
-To deploy all the functions to production run 
-```
-npm run deploy
 ```
