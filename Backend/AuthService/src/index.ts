@@ -15,28 +15,28 @@ app.use(cors());
 app.use(bodyparser.urlencoded({extended : true}));
 app.use(bodyparser.json());
 
-app.post('/login',async (req ,res) =>{
+app.post('/login', async (req ,res) => {
     let credentials = req.body.credentials;
     let userFaund = true;
     for(let i = 0; i < database.users.length; i++){
-        if(database.users[i].username === credentials.username){
+        if(database.users[i].username === credentials.username) {
             userFaund = false;
             let userData = database.users[i];
-           if(bcrypt.compareSync(credentials.password,userData.password)){
+           if(bcrypt.compareSync(credentials.password,userData.password)) {
             res.send({code : "200", message : "Success"});
            }
-           else{
+           else {
             res.send({code : "401", message : "Incorrect Password"});
            }
         }
     }
-    if(userFaund){
+    if(userFaund) {
         res.send({code : "401", message : "User not faund"});
     }
 });
 
 
-app.post('/register', async (req, res) =>{
+app.post('/register', async (req, res) => {
     let credentials = req.body.credentials;
     const encriptedPswd = bcrypt.hashSync(credentials.password, 10);
     res.send({encriptedPswd});

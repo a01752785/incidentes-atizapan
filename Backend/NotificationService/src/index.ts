@@ -23,7 +23,7 @@ app.use(bodyparser.json());
 const topic = "all";
 
 //Endpoint "addNotification which expects a notification body to be sent to app"
-app.post('/addNotification',async (req,res) =>{
+app.post('/addNotification',async (req,res) => {
     const notification = req.body.notification;
     const message = {notification, topic};
     admin.messaging().send(message)

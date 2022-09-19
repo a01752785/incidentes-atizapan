@@ -12,7 +12,7 @@ const Home: NextPage = () => {
 
       <main>
         <h1 className="text-black font-bold text-4xl text-center">
-          Bienvenido a  <a href="https://nextjs.org" className="text-blue-500">Alerta Atizapan</a>
+          Bienvenido a <a href="https://nextjs.org" className="text-blue-500">Alerta Atizapan</a>
         </h1>
       </main>
     </div>

@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     /**
      * @author Sebastian Mora
      * This funtion "subscribes" the device for receiving push notification
-     *  TODO : This function is going to be in the model section
+     * TODO : This function is going to be in the model section
      */
     private fun subscribe(){
         FirebaseMessaging.getInstance().subscribeToTopic("all")

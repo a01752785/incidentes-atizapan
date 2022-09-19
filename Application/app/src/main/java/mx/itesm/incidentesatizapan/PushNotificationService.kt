@@ -12,8 +12,8 @@ import com.google.firebase.messaging.RemoteMessage
  */
 class PushNotificationService : FirebaseMessagingService(){
     //TODO : Display where the incident is going on, maybe?
-    /**This  function prints the specific token of the device for
-     *individual testing purposes
+    /**This function prints the specific token of the device for
+     * individual testing purposes
      * @param token The FCM token of the device
      */
     override fun onNewToken(token: String) {
@@ -23,7 +23,5 @@ class PushNotificationService : FirebaseMessagingService(){
 
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
-
     }
-
 }
