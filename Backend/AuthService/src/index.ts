@@ -18,7 +18,7 @@ app.use(bodyparser.json());
 app.post('/login', async (req ,res) => {
     let credentials = req.body.credentials;
     let userFound = true;
-    for (let i = 0; i < database.users.length; i++){
+    for (let i = 0; i < database.users.length; i++) {
         if (database.users[i].username === credentials.username) {
             userFound = false;
             let userData = database.users[i];
