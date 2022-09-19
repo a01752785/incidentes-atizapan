@@ -1,0 +1,29 @@
+{
+  "name": "authservice",
+  "version": "1.0.0",
+  "description": "This is the microservice that handles the authentification",
+  "main": "lib/index.js",
+  "scripts": {
+    "dev": "npx nodemon -x ts-node -e ts src ",
+    "build": "tsc",
+    "serve": "tsc && node ./lib"
+  },
+  "author": "Sebastian Mora",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/jsonwebtoken": "^8.5.9",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1"
+  }
+}

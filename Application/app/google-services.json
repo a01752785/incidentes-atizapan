@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "981850230594",
+    "project_id": "alerta-atizapan",
+    "storage_bucket": "alerta-atizapan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981850230594:android:e59fb0575d644775d582db",
+        "android_client_info": {
+          "package_name": "mx.itesm.incidentesatizapan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "981850230594-r477krm3tgro8qlcuge1q9f8keme2f98.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.itesm.incidentesatizapan",
+            "certificate_hash": "01174f1f81793bfe455ad413d780fc2aac80b0e8"
+          }
+        },
+        {
+          "client_id": "981850230594-ipjich66iclfhqk17dsks235k585npg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj5MDQFpGq_iusLnAzSHvYhwTNBzoLKeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "981850230594-ipjich66iclfhqk17dsks235k585npg3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
