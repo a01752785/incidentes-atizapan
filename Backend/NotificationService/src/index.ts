@@ -5,7 +5,7 @@ import * as bodyparser from "body-parser";
 import * as cors from "cors";
 
 //Initialization of Firebase admin with secret 
-let serviceAccount = require("../alerta-atizapan-firebase-adminsdk-f6242-46579323c0.json");
+let serviceAccount = require("../.secret/adminsdk.json");
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://alerta-atizapan-default-rtdb.firebaseio.com"
@@ -38,4 +38,4 @@ app.post('/addNotification',async (req,res) =>{
 });
 
 //Starting the express server
-app.listen(port, () => console.log(`Server is listening on http://localhost/${port}`));
+app.listen(port, () => console.log(`Notification service is listening on http://localhost:${port}/addNotification`));

@@ -6,7 +6,7 @@ const express = require("express");
 const bodyparser = require("body-parser");
 const cors = require("cors");
 //Initialization of Firebase admin with secret 
-let serviceAccount = require("../alerta-atizapan-firebase-adminsdk-f6242-46579323c0.json");
+let serviceAccount = require("../.secret/adminsdk.json");
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://alerta-atizapan-default-rtdb.firebaseio.com"
