@@ -17,10 +17,10 @@ app.use(bodyparser.json());
 
 app.post('/login', async (req ,res) => {
     let credentials = req.body.credentials;
-    let userFaund = true;
+    let userfound = true;
     for(let i = 0; i < database.users.length; i++){
         if(database.users[i].username === credentials.username) {
-            userFaund = false;
+            userfound = false;
             let userData = database.users[i];
            if(bcrypt.compareSync(credentials.password,userData.password)) {
             res.send({code : "200", message : "Success"});
@@ -30,8 +30,8 @@ app.post('/login', async (req ,res) => {
            }
         }
     }
-    if(userFaund) {
-        res.send({code : "401", message : "User not faund"});
+    if(userfound) {
+        res.send({code : "401", message : "User not found"});
     }
 });
 
