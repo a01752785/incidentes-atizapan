@@ -10,16 +10,16 @@ plugins {
 
 android {
     compileSdk 33
-    compileSdk 32
 
     defaultConfig {
         applicationId "mx.itesm.incidentesatizapan"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
