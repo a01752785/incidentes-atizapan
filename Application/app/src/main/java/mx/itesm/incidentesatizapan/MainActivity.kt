@@ -4,12 +4,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessaging
+import io.grpc.ManagedChannelBuilder
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var client: IncidentServiceClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         subscribe()  //Subscribing the device onCreate
+        var channel = ManagedChannelBuilder.forAddress("192.168.1.68", 50051).usePlaintext().build()
+        client = IncidentServiceClient(channel)
+        client.getIncidents()
     }
 
     /**
