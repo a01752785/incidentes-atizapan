@@ -18,12 +18,10 @@ WORKDIR /app
 
 COPY --from=build /app/package*.json ./  
 
-ADD .secret /app/.secret/
-
 RUN npm install --omit=dev 
 
 COPY --from=build /app/dist ./dist     
 
-EXPOSE 6969 
+EXPOSE 6969
 
 CMD ["npm" , "run", "serve"]
