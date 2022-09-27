@@ -2,10 +2,10 @@ import * as express from "express";
 import * as argon from "argon2";
 import User from "../models/User";
 
-//User table request methods (Create, Find, FindByX)
+// User table request methods (Create, Find, FindByX)
 const router = express.Router();
 
-//FindAll Endpoint
+// FindAll Endpoint
 router.get('/', (req, res) => {
     User.find({},(err : any, docs : any) => {
         if (!err) {
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
     });
 });
 
-//FindByUsernaem Endpoint
+// FindByUsernaem Endpoint
 router.get('/:username', (req, res) => {
     const username = req.params.username;
     User.find({username}, (err : any, docs : any) => {
@@ -30,7 +30,7 @@ router.get('/:username', (req, res) => {
     });
 });
 
-//Create User Endpoint
+// Create User Endpoint
 router.post('/', async (req, res) => {
     let credentials = req.body.credentials;
     const hashPassword = await argon.hash(credentials.password);

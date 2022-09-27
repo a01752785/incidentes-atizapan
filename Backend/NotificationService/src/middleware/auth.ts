@@ -1,10 +1,10 @@
 import axios from "axios";
 import { NextFunction, Request, Response } from "express";
 
-//Auth-service URI for authenticating tokens
+// Auth-service URI for authenticating tokens
 const authService = process.env.AUTH_SERVICE || "http://localhost:5001";
 
-//Middlewarte for checking tokens
+// Middlewarte for checking tokens
 const verifyToken = async (req : Request, res : Response, next : NextFunction) => {
     const token = req.body.token || req.query.token || req.headers["x-access-token"];
     if (!token) {

@@ -1,5 +1,5 @@
 # Database Service
-This microservice is in charge of interacting with the mongo database, it simulates the SQL approach using Object Models (schemas).  
+The microservice is in charge of interacting with the mongo database, it simulates the SQL approach using Object Models (schemas).  
 
 ## API Usage
 Tha service will listen on the selected port with th URL _http://database-service.HOST/_
@@ -69,4 +69,4 @@ That is all!
 
 ## Deploying
 
-Please look for the Backend Architecture to learn how it's going to be deployed. We are using Docekr conteiners for this purpose.
+Please look for the Backend Architecture to learn how it's going to be deployed. We are using Docker conteiners for this purpose.

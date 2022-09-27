@@ -1,5 +1,5 @@
 # Authentication Service
-This microservice is in charge of verifying and assigning tokens, in order to ensure that the requests received by all the APIs are secure.
+The microservice is in charge of verifying and assigning tokens, in order to ensure that the requests received by all the APIs are secure.
 
 ## API Usage
 Tha service will listen on the selected port with th URL _http://auth-service.HOST/_
@@ -91,4 +91,4 @@ That is all!
 
 ## Deploying
 
-Please look for the Backend Architecture to learn how it's going to be deployed. We are using Docekr conteiners for this purpose.
+Please look for the Backend Architecture to learn how it's going to be deployed. We are using Docker conteiners for this purpose.

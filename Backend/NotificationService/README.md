@@ -1,5 +1,5 @@
 # Notification Service
-This is the microservice that interacts with Firebase to send notifications to the app users.
+The is the microservice that interacts with Firebase to send notifications to the app users.
 
 ## API Usage
 Tha service will listen on the selected port with th URL _http://HOST:PORT/addMessage_
@@ -46,4 +46,4 @@ That is all!
 
 ## Deploying
 
-Please look for the Backend Architecture to learn how it's going to be deployed. We are using Docekr conteiners for this purpose.
+Please look for the Backend Architecture to learn how it's going to be deployed. We are using Docker conteiners for this purpose.

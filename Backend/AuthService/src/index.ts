@@ -5,7 +5,7 @@ import * as bodyparser from "body-parser";
 import * as cors from "cors";
 import axios from "axios";
 
-//Secret for encoding the JWT (Jason Web Token)
+//Secret for encoding the JWT (Json Web Token)
 const privateData = require("../.secret/private.json");
 
 //Database service uri
@@ -19,14 +19,14 @@ app.use(cors());
 app.use(bodyparser.urlencoded({extended : true}));
 app.use(bodyparser.json());
 
-//Endpoint for getting JWT (Jason Web Token)
+// Endpoint for getting JWT (Json Web Token)
 app.post('/getToken', async (req ,res) => {
     let credentials = req.body.credentials;
     axios.get(databaseService + "/users/" + credentials.username)
         .then(async resp => {
             if (resp.data.docs.length > 0) {
                 let userData = resp.data.docs[0];
-                if (await argon.verify(userData.password,credentials.password)) {
+                if (await argon.verify(userData.password, credentials.password)) {
                     let token = jwt.sign({id : userData._id, username : userData.username},privateData.secret);
                     res.send({code : 200, message : "Success", token})
                 }
@@ -43,7 +43,7 @@ app.post('/getToken', async (req ,res) => {
         });
 });
 
-//Endpoint for verifying JWT 
+// Endpoint for verifying JWT 
 app.get('/verify', async (req,res) => {
     let token = req.headers["x-access-token"] as string;
     if (!token) {
@@ -61,12 +61,12 @@ app.get('/verify', async (req,res) => {
     }
 });
 
-//Enpoint for registering Users (Only for development)
+// Enpoint for registering Users (Only for development)
 app.post('/register', async (req, res) => {
     let credentials = req.body.credentials;
     const encriptedPswd = await argon.hash(credentials.password);
     res.send({encriptedPswd});
 });
 
-//Starting the express server
+// Starting the express server
 app.listen(port, () => console.log(`Authentication service is listening on http://localhost:${port}/`));
