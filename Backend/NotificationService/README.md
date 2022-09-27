@@ -2,7 +2,7 @@
 The is the microservice that interacts with Firebase to send notifications to the app users.
 
 ## API Usage
-Tha service will listen on the selected port with th URL _http://HOST:PORT/addMessage_
+The service will listen on the selected port with th URL _http://HOST:PORT/addMessage_
 
 ### Body Paramaters
 The API expects a JSON like this : 

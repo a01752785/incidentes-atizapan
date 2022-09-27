@@ -2,7 +2,7 @@
 The microservice is in charge of verifying and assigning tokens, in order to ensure that the requests received by all the APIs are secure.
 
 ## API Usage
-Tha service will listen on the selected port with th URL _http://auth-service.HOST/_
+The service will listen on the selected port with th URL _http://auth-service.HOST/_
 
 ### Avilable Endpoints
 

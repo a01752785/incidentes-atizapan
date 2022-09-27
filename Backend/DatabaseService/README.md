@@ -2,7 +2,7 @@
 The microservice is in charge of interacting with the mongo database, it simulates the SQL approach using Object Models (schemas).  
 
 ## API Usage
-Tha service will listen on the selected port with th URL _http://database-service.HOST/_
+The service will listen on the selected port with th URL _http://database-service.HOST/_
 
 ### Avilable Endpoints
 
