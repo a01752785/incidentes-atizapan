@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  authservice:
+    build: ./AuthService
+    ports:
+      - 8000:6969
+    environment:
+      PORT : 6969
+      DATABASE_SERVICE : http://databaseservice:6969
+
+  databaseservice:
+    build: ./DatabaseService
+    ports:
+      - 8001:6969
+    environment:
+      PORT : 6969
+      MONGODB_CONNSTRING : mongodb://mongodb/alerta_atizapan
+
+  notificationservice:
+    build: ./NotificationService
+    ports:
+      - 8002:6969
+    environment:
+      PORT : 6969
+      AUTH_SERVICE : http://authservice:6969
+
+
+  mongodb:
+    image: mongo:6.0

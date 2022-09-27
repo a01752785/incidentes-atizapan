@@ -9,18 +9,20 @@ The API expects a JSON like this :
 
 ```
 "notification" : {
-	"title" : "Notification Name",
-    "body": "Notification description"
+	"title" : "<Notification Name>",
+    "body": "<Notification description>"
 }
 ```
 
 To know more about the notification paramaters look for [FCM Notification Messages](https://firebase.google.com/docs/cloud-messaging/concept-options)
 
 ### Security
-The API will need you to Authenticate for you to send messages to the users
+This microservice is interconnected with the authentication service, so in order to make requests, you will have to send a token that ensures that the creator of the request is verified.
 
 ## Development
 It is being developed with Typescript on Node v18. To develop, here is a guide.
+
+> _WARNING : To run succesfully you should have all the microservices running in your machine._
 
 ### Starting
 Navigate to the notification microservice repository.
