@@ -21,21 +21,24 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnInundacion"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
         android:clickable="true"
         android:src="@drawable/flood"
-        app:layout_constraintTop_toBottomOf="@+id/btnIncendio"
-        tools:layout_editor_absoluteX="133dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIncendio" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnTerremoto"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:clickable="true"
         android:src="@drawable/car_collision"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnInundacion"
         app:layout_constraintTop_toBottomOf="@+id/btnIncendio" />
 </androidx.constraintlayout.widget.ConstraintLayout>

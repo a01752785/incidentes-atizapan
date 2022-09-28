@@ -8,7 +8,11 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import mx.itesm.incidentesatizapan.databinding.FragmentMainBinding
 import mx.itesm.incidentesatizapan.databinding.FragmentManualBinding
-
+/**
+ * @author Sebaastian Burgos
+ * fragmento donde se ve las imagenes de que hacer en caso de:
+ * incendio, terremoto, inundacion.
+ */
 
 class ManualFragment : Fragment() {
 
@@ -36,6 +40,7 @@ class ManualFragment : Fragment() {
         registerEvents()
     }
 
+    //botones para mover a los fragmentos correspondientes.
     private fun registerEvents() {
         binding.btnIncendio.setOnClickListener {
             findNavController().navigate(
@@ -53,7 +58,6 @@ class ManualFragment : Fragment() {
                 ManualFragmentDirections.actionManualFragmentToTerremotoFragment()
             )
         }
-
 
     }
 }

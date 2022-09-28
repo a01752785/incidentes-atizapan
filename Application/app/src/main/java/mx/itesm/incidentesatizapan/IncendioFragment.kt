@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+/**
+ * @author Sebaastian Burgos
+ * Fragmento de imagen de incendio
+ */
 class IncendioFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
