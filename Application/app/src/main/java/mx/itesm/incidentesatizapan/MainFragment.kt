@@ -37,6 +37,12 @@ class MainFragment : Fragment() {
             findNavController().navigate(
                 MainFragmentDirections.actionMainFragmentToMapsFragment())
         }
+        binding.btnManual.setOnClickListener {
+            findNavController().navigate(
+                MainFragmentDirections.actionMainFragmentToManualFragment())
+        }
+
     }
+
 
 }

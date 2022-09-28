@@ -15,14 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IncidentesAtizapan"
         tools:targetApi="31">
-
+        <activity
+            android:name=".img_Inundacion"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity> <!-- Firebase Notification Service -->
-
-        <!-- no mover, splashscreen para el logo de Atizapan
-        Sebastian Burgos-->
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity> <!-- Firebase Notification Service -->
+        <!--
+ no mover, splashscreen para el logo de Atizapan
+        Sebastian Burgos
+        -->
         <activity
             android:name=".SplashScreen"
             android:exported="true"
@@ -37,7 +40,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
-
 
         <service
             android:name=".PushNotificationService"
