@@ -3,10 +3,12 @@
       "module": "commonjs",
       "noImplicitReturns": true,
       "noUnusedLocals": true,
-      "outDir": "lib",
+      "outDir": "dist",
+      "rootDir": "src",
       "sourceMap": true,
       "strict": true,
-      "target": "es2017"
+      "target": "es2017",
+      "moduleResolution": "node"
     },
     "compileOnSave": true,
     "include": [

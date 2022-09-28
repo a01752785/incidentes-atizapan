@@ -1,17 +1,29 @@
-FROM node:18
+#Build
+FROM node:18-alpine AS build 
 
 WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm install 
 
 COPY . .
 
-ENV PORT=5000 
+RUN npm run build
 
-EXPOSE 5000 
+#Production 
+FROM node:18-alpine AS production 
 
-CMD ["npm","run","dev"]
+WORKDIR /app 
 
+COPY --from=build /app/package*.json ./  
 
+ADD .secret /app/.secret/
+
+RUN npm install --omit=dev 
+
+COPY --from=build /app/dist ./dist     
+
+EXPOSE 6969 
+
+CMD ["npm" , "run", "serve"]
