@@ -16,15 +16,8 @@ class IncidentServiceClient(private val channel: ManagedChannel) : Closeable {
         val request = IncidentServiceRpcRequest.newBuilder().build()
         try {
             val response = stub.getIncidents(request)
-            val incidents = Incidents.newBuilder()
-            incidents.addIncident(response)
-            println("Received:\n" +
-                    "${response.coordinate.latitude},\n" +
-                    "${response.coordinate.longitude},\n" +
-                    "${response.incidentType},\n" +
-                    "${response.referenceLocation},\n" +
-                    "${response.description}\n")
-            return incidents.build()
+            println("Received: ${response.incidentCount}")
+            return response
         } catch (e: StatusRuntimeException) {
             println("gRPC failed: ${e.status}")
             return Incidents.newBuilder().build()

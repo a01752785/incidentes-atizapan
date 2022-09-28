@@ -18,17 +18,28 @@ function getIncidentsFromDb(incidentServiceRpcRequest) {
         latitude: 19.589693,
         longitude: -99.229509
       },
-      reference_location: "Calle Mariano Matamoros",
-      description: "Incendio de casa. Mantenerse alejados."
+      reference_location: "Calle Mariano Matamoros hola",
+      description: "Incendio de casa. Mantenerse alejados.",
+      incident_type: "WATER_LEAK",
+      risk_radius: 5
     };
+    var incident2 = {
+      coordinate: {
+        latitude: 19.589693,
+        longitude: -99.229509
+      },
+      reference_location: "Calle Mariano Matamoros",
+      description: "Incendio de casa. Mantenerse alejados.",
+      incident_type: "CAR_ACCIDENT",
+      risk_radius: 7
+    };
+    var incidents = [incident, incident2];
     console.log("call");
-    return incident;
+    return { incident : incidents };
 }
 
 function getIncidents(call, callback) {
     callback(null, getIncidentsFromDb(call.request));
-    // call.write(getIncidentsFromDb(call.request));
-    // call.close();
 }
 
 /**
@@ -38,11 +49,9 @@ function getIncidents(call, callback) {
 function main() {
   var server = new grpc.Server();
   server.addService(incidentservice.IncidentService.service, {getIncidents: getIncidents});
-  server.bindAsync('192.168.1.68:50051', grpc.ServerCredentials.createInsecure(), () => {
-    console.log("server started");
+  server.bindAsync('0.0.0.0:50051', grpc.ServerCredentials.createInsecure(), () => {
+    console.log("gRPC server started on port 50051, with services getIncidents");
     server.start();
-    obj = getIncidentsFromDb(1);
-    console.log(obj);
   });
 }
 

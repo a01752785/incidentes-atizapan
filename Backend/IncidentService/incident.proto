@@ -5,7 +5,7 @@ package mx.itesm.incidentesatizapan;
 option java_multiple_files = true;
 
 service IncidentService {
-  rpc GetIncidents(IncidentServiceRpcRequest) returns (Incident) {}
+  rpc GetIncidents(IncidentServiceRpcRequest) returns (Incidents) {}
 }
 
 // The IncidentServiceRpcRequest defines the parameters to make a request to the incident service.
@@ -15,12 +15,6 @@ message IncidentServiceRpcRequest {
   // Defines a radius in meters to get information from, with the location as the center.
   // Leave empty to get all incidents.
   optional double radius = 2;
-}
-
-// The IncidentServiceRpcReply contains the information returned from the incident service.
-message IncidentServiceRpcReply {
-  // The list of incidents returned.
-  optional Incidents incidents = 1;
 }
 
 message GeoCoordinate {

@@ -33,7 +33,7 @@ function main() {
   }
   client.getIncidents({name: user}, function(err, response) {
     console.log('Success, ', err, response);
-    console.log(response.incident)
+    console.log(response)
   });
 }
 
