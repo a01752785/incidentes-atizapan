@@ -12,6 +12,10 @@ import java.util.concurrent.TimeUnit
 class IncidentServiceClient(private val channel: ManagedChannel) : Closeable {
     private var stub = IncidentServiceGrpc.newBlockingStub(channel)
 
+    /**
+     * Calls the GetIncidents service in the gRPC server to retrieve all the active incidents.
+     * @return Incidents, the list of active incidents.
+     */
     fun getIncidents(): Incidents {
         val request = IncidentServiceRpcRequest.newBuilder().build()
         try {
