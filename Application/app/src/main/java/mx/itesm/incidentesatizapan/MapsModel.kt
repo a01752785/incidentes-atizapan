@@ -5,18 +5,24 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.CircleOptions
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import io.grpc.ManagedChannelBuilder
 
 /**
  * @author: David Damian
  * The model for the maps fragment.
  */
 class MapsModel {
-    // TODO: Update this function to call a client class and retrieve info from server
     /**
      * Get a list of incidents relevant to the user.
      * @return Incidents, a list of incidents.
      */
     fun getIncidents(): Incidents {
+        val channel = ManagedChannelBuilder
+            .forAddress("192.168.1.68", 50051)
+            .usePlaintext()
+            .build()
+        val client = IncidentServiceClient(channel)
+        return client.getIncidents()
         val incidents = Incidents.newBuilder()
 
         incidents.addIncident(
