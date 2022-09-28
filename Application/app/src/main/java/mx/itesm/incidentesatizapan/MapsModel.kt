@@ -13,7 +13,7 @@ import io.grpc.ManagedChannelBuilder
  */
 class MapsModel {
     /**
-     * Get a list of incidents relevant to the user.
+     * Get a list of incidents relevant to the user from the server.
      * @return Incidents, a list of incidents.
      */
     fun getIncidents(): Incidents {
