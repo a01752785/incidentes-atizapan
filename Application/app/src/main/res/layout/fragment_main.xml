@@ -42,5 +42,12 @@
             android:layout_width="match_parent"
             android:layout_height="264dp"
             android:orientation="vertical"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnManual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@drawable/warning" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
