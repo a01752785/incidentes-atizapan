@@ -8,6 +8,8 @@ services:
     environment:
       PORT : 6969
       DATABASE_SERVICE : http://databaseservice:6969
+    depends_on:
+      - databaseservice
 
   databaseservice:
     build: ./DatabaseService
@@ -16,6 +18,8 @@ services:
     environment:
       PORT : 6969
       MONGODB_CONNSTRING : mongodb://mongodb/alerta_atizapan
+    depends_on:
+      - mongodb
 
   notificationservice:
     build: ./NotificationService
@@ -24,7 +28,8 @@ services:
     environment:
       PORT : 6969
       AUTH_SERVICE : http://authservice:6969
-
+    depends_on:
+      - authservice
 
   mongodb:
     image: mongo:6.0
