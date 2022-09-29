@@ -19,10 +19,13 @@ app.use(cors());
 app.use(bodyparser.urlencoded({extended : true}));
 app.use(bodyparser.json());
 
+//Generate the token for the Auth service
+let serviceToken = jwt.sign({id : "AUTHSERVICE", username : "AUTHSERVICE"}, privateData.secret);
+
 // Endpoint for getting JWT (Json Web Token)
 app.post('/getToken', async (req ,res) => {
     let credentials = req.body.credentials;
-    axios.get(databaseService + "/users/" + credentials.username)
+    axios.get(databaseService + "/users/" + credentials.username, {headers : {"x-access-token" : serviceToken}})
         .then(async resp => {
             if (resp.data.docs.length > 0) {
                 let userData = resp.data.docs[0];
@@ -67,6 +70,8 @@ app.post('/register', async (req, res) => {
     const encriptedPswd = await argon.hash(credentials.password);
     res.send({encriptedPswd});
 });
+
+
 
 // Starting the express server
 app.listen(port, () => console.log(`Authentication service is listening on http://localhost:${port}/`));
