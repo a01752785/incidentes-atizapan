@@ -19,7 +19,7 @@ class IncidentServiceClient(private val channel: ManagedChannel) : Closeable {
     fun getIncidents(): Incidents {
         val request = IncidentServiceRpcRequest.newBuilder().build()
         try {
-            val response = stub.getIncidents(request)
+            val response = stub.withDeadlineAfter(2, TimeUnit.SECONDS).getIncidents(request)
             println("Received: ${response.incidentCount}")
             return response
         } catch (e: StatusRuntimeException) {
