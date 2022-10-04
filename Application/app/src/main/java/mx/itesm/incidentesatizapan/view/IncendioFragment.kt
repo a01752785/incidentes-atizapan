@@ -1,16 +1,17 @@
-package mx.itesm.incidentesatizapan
+package mx.itesm.incidentesatizapan.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import mx.itesm.incidentesatizapan.R
 
 /**
  * @author Sebaastian Burgos
- * Fragmento de imagen de terremoto.
+ * Fragmento de imagen de incendio
  */
-class TerremotoFragment : Fragment() {
+class IncendioFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +22,7 @@ class TerremotoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_terremoto, container, false)
+        return inflater.inflate(R.layout.fragment_incendio, container, false)
     }
 
 }

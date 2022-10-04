@@ -1,4 +1,4 @@
-package mx.itesm.incidentesatizapan
+package mx.itesm.incidentesatizapan.view
 
 import android.graphics.Color
 import androidx.fragment.app.Fragment
@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.LifecycleOwner
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -18,6 +17,10 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.CircleOptions
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import mx.itesm.incidentesatizapan.Incident
+import mx.itesm.incidentesatizapan.Incidents
+import mx.itesm.incidentesatizapan.viewmodel.MapsViewModel
+import mx.itesm.incidentesatizapan.R
 import mx.itesm.incidentesatizapan.databinding.FragmentMapsBinding
 
 /**
