@@ -121,6 +121,12 @@ class MapsFragment : Fragment(), GoogleMap.OnMarkerClickListener {
         }
     }
 
+    /**
+     * This function is called when the user clicks on a map marker.
+     * @param marker, the marker clicked by the user.
+     * @return Boolean, true if the default action (centering the marker and showing the title)
+     * has been overridden and should not be performed, false otherwise.
+     */
     override fun onMarkerClick(marker: Marker): Boolean {
         // Animates a camera change focusing on the incident marker, and then shows the
         // incident info.
