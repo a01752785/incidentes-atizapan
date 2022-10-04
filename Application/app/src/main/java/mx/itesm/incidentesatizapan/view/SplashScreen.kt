@@ -1,10 +1,11 @@
-package mx.itesm.incidentesatizapan
+package mx.itesm.incidentesatizapan.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
+import mx.itesm.incidentesatizapan.R
 
 @Suppress("DEPRETATION")
 class SplashScreen : AppCompatActivity() {

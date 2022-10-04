@@ -1,9 +1,10 @@
-package mx.itesm.incidentesatizapan
+package mx.itesm.incidentesatizapan.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessaging
+import mx.itesm.incidentesatizapan.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

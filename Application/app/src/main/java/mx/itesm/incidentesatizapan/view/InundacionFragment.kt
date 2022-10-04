@@ -1,10 +1,11 @@
-package mx.itesm.incidentesatizapan
+package mx.itesm.incidentesatizapan.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import mx.itesm.incidentesatizapan.R
 
 /**
  * @author Sebaastian Burgos

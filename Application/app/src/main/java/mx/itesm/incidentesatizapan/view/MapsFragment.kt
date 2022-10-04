@@ -1,4 +1,4 @@
-package mx.itesm.incidentesatizapan
+package mx.itesm.incidentesatizapan.view
 
 import android.graphics.Color
 import androidx.fragment.app.Fragment
@@ -13,6 +13,10 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
+import mx.itesm.incidentesatizapan.Incident
+import mx.itesm.incidentesatizapan.Incidents
+import mx.itesm.incidentesatizapan.viewmodel.MapsViewModel
+import mx.itesm.incidentesatizapan.R
 import mx.itesm.incidentesatizapan.databinding.FragmentMapsBinding
 
 /**

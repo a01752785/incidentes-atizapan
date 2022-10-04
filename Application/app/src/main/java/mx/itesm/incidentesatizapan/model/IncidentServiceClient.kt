@@ -1,7 +1,10 @@
-package mx.itesm.incidentesatizapan
+package mx.itesm.incidentesatizapan.model
 
 import io.grpc.ManagedChannel
 import io.grpc.StatusRuntimeException
+import mx.itesm.incidentesatizapan.IncidentServiceGrpc
+import mx.itesm.incidentesatizapan.IncidentServiceRpcRequest
+import mx.itesm.incidentesatizapan.Incidents
 import java.io.Closeable
 import java.util.concurrent.TimeUnit
 

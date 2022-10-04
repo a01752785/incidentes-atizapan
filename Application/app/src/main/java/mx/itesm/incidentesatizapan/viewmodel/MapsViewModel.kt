@@ -1,7 +1,10 @@
-package mx.itesm.incidentesatizapan
+package mx.itesm.incidentesatizapan.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import mx.itesm.incidentesatizapan.Incident
+import mx.itesm.incidentesatizapan.Incidents
+import mx.itesm.incidentesatizapan.model.MapsModel
 
 /**
  * @author: David Damian
