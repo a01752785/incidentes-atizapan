@@ -36,9 +36,9 @@ class ManualFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        registerEvents()
+        //registerEvents()
     }
-
+/*
     //botones para mover a los fragmentos correspondientes.
     private fun registerEvents() {
         binding.btnIncendio.setOnClickListener {
@@ -59,4 +59,6 @@ class ManualFragment : Fragment() {
         }
 
     }
+
+ */
 }

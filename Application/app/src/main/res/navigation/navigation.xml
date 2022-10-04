@@ -3,39 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/mainFragment">
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="mx.itesm.incidentesatizapan.view.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
-        <action
-            android:id="@+id/action_mainFragment_to_mapsFragment"
-            app:destination="@id/mapsFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_manualFragment"
-            app:destination="@id/manualFragment" />
-    </fragment>
+    app:startDestination="@id/incendioFragment">
     <fragment
         android:id="@+id/mapsFragment"
         android:name="mx.itesm.incidentesatizapan.view.MapsFragment"
         android:label="fragment_maps"
         tools:layout="@layout/fragment_maps" />
-    <fragment
-        android:id="@+id/manualFragment"
-        android:name="mx.itesm.incidentesatizapan.view.ManualFragment"
-        android:label="fragment_manual"
-        tools:layout="@layout/fragment_manual" >
-        <action
-            android:id="@+id/action_manualFragment_to_incendioFragment"
-            app:destination="@id/incendioFragment" />
-        <action
-            android:id="@+id/action_manualFragment_to_inundacionFragment"
-            app:destination="@id/inundacionFragment" />
-        <action
-            android:id="@+id/action_manualFragment_to_terremotoFragment"
-            app:destination="@id/terremotoFragment" />
-    </fragment>
     <fragment
         android:id="@+id/incendioFragment"
         android:name="mx.itesm.incidentesatizapan.view.IncendioFragment"

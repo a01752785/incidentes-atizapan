@@ -15,17 +15,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IncidentesAtizapan"
         tools:targetApi="31">
-        
+        <activity
+            android:name=".Menu"
+            android:exported="true"
+            android:label="@string/title_activity_menu"
+            >
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
         <activity
             android:name=".img_Inundacion"
             android:exported="false" />
         <activity
             android:name=".view.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity> <!-- Firebase Notification Service -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- Firebase Notification Service -->
         <!--
  no mover, splashscreen para el logo de Atizapan
         Sebastian Burgos
@@ -34,11 +46,7 @@
             android:name=".view.SplashScreen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data

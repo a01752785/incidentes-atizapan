@@ -12,9 +12,7 @@ import mx.itesm.incidentesatizapan.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = MainFragment()
-    }
+
 
     private val viewModel: MainViewModel by viewModels()
     private lateinit var binding: FragmentMainBinding
@@ -29,9 +27,9 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        registerEvents()
+        //registerEvents()
     }
-
+/*
     private fun registerEvents() {
         binding.btnMapa.setOnClickListener {
             findNavController().navigate(
@@ -43,6 +41,6 @@ class MainFragment : Fragment() {
         }
 
     }
-
+*/
 
 }
