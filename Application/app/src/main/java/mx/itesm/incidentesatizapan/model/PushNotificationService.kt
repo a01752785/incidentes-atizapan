@@ -1,4 +1,4 @@
-package mx.itesm.incidentesatizapan
+package mx.itesm.incidentesatizapan.model
 
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessaging

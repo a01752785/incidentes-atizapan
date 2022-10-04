@@ -1,4 +1,4 @@
-package mx.itesm.incidentesatizapan
+package mx.itesm.incidentesatizapan.viewmodel
 
 import androidx.lifecycle.ViewModel
 
