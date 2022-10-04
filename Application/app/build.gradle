@@ -45,6 +45,9 @@ android {
 }
 
 dependencies {
+    //Okhttp para usar en la llamada de la API del Clima
+    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+
     //Firebase Initial Config
     implementation platform('com.google.firebase:firebase-bom:30.2.0')
 
