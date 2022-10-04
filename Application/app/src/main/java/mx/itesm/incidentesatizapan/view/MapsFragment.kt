@@ -13,6 +13,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
+import io.grpc.StatusRuntimeException
 import mx.itesm.incidentesatizapan.Incident
 import mx.itesm.incidentesatizapan.Incidents
 import mx.itesm.incidentesatizapan.viewmodel.MapsViewModel
@@ -39,7 +40,13 @@ class MapsFragment : Fragment(), GoogleMap.OnMarkerClickListener {
         map.setOnMarkerClickListener(this)
         googleMap = map
 
-        viewModel.getIncidents()
+        // Tries to communicate with the gRPC server to get local incidents
+        try {
+            viewModel.getIncidents()
+        } catch (e: StatusRuntimeException) {
+            println("gRPC failed: ${e.status}")
+            notifyConnectionFailure()
+        }
     }
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -61,6 +68,18 @@ class MapsFragment : Fragment(), GoogleMap.OnMarkerClickListener {
         viewModel.incidents.observe(viewLifecycleOwner) { incidents ->
             addMarkers(incidents)
         }
+    }
+
+    /**
+     * This function is called when there is an error connecting to the Incident Server,
+     * asking the user to try again.
+     */
+    private fun notifyConnectionFailure() {
+        val alertDialog = AlertDialog.Builder(requireContext())
+            .setTitle("No se ha podido cargar la información")
+            .setMessage("Verifique su conectividad a internet e inténtelo más tarde.")
+            .setPositiveButton("Aceptar") { _, _ -> }
+        alertDialog.show()
     }
 
     /**
