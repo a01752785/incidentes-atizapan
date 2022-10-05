@@ -8,6 +8,10 @@ import android.view.WindowManager
 import mx.itesm.incidentesatizapan.Menu
 import mx.itesm.incidentesatizapan.R
 
+/**
+ * @author Sebastian Burgos Alanis A01746459
+ * Se crea la clase SplashScreen para crear el splash
+ */
 @Suppress("DEPRETATION")
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

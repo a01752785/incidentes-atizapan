@@ -9,6 +9,10 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import mx.itesm.incidentesatizapan.databinding.ActivityMenuBinding
 
+/**
+ * @author Sebastian Burgos Alanis A01746459
+ * Se crea la clase de Menu, respecto al menu de la interfaz de main_fragment
+ */
 class Menu : AppCompatActivity() {
 
     private lateinit var binding: ActivityMenuBinding
