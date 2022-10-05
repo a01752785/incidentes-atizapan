@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="mx.itesm.incidentesatizapan.ui.notifications.NotificationsFragment"
+        android:name="mx.itesm.incidentesatizapan.view.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
     <fragment
@@ -21,22 +21,22 @@
         android:label="fragment_manual"
         tools:layout="@layout/fragment_manual" >
         <action
-            android:id="@+id/action_navigation_dashboard_to_incendioFragment2"
-            app:destination="@id/incendioFragment2" />
+            android:id="@+id/action_navigation_dashboard_to_incendioFragment"
+            app:destination="@id/incendioFragment" />
         <action
-            android:id="@+id/action_navigation_dashboard_to_inundacionFragment2"
-            app:destination="@id/inundacionFragment2" />
+            android:id="@+id/action_navigation_dashboard_to_inundacionFragment"
+            app:destination="@id/inundacionFragment" />
         <action
             android:id="@+id/action_navigation_dashboard_to_terremotoFragment"
             app:destination="@id/terremotoFragment" />
     </fragment>
     <fragment
-        android:id="@+id/incendioFragment2"
+        android:id="@+id/incendioFragment"
         android:name="mx.itesm.incidentesatizapan.view.IncendioFragment"
         android:label="fragment_incendio"
         tools:layout="@layout/fragment_incendio" />
     <fragment
-        android:id="@+id/inundacionFragment2"
+        android:id="@+id/inundacionFragment"
         android:name="mx.itesm.incidentesatizapan.view.InundacionFragment"
         android:label="fragment_inundacion"
         tools:layout="@layout/fragment_inundacion" />

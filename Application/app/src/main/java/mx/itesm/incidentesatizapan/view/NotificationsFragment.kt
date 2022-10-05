@@ -1,4 +1,4 @@
-package mx.itesm.incidentesatizapan.ui.notifications
+package mx.itesm.incidentesatizapan.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import mx.itesm.incidentesatizapan.databinding.FragmentNotificationsBinding
+import mx.itesm.incidentesatizapan.viewmodel.NotificationsViewModel
 
+/**
+ * cambiar esto despues
+ */
 class NotificationsFragment : Fragment() {
 
     private var _binding: FragmentNotificationsBinding? = null
