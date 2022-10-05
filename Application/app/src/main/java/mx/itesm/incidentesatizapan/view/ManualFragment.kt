@@ -43,20 +43,22 @@ class ManualFragment : Fragment() {
     private fun registerEvents() {
         binding.btnIncendio.setOnClickListener {
             findNavController().navigate(
-                ManualFragmentDirections.actionManualFragmentToIncendioFragment()
+                ManualFragmentDirections.actionNavigationDashboardToIncendioFragment()
             )
         }
         binding.btnInundacion.setOnClickListener {
             findNavController().navigate(
-                ManualFragmentDirections.actionManualFragmentToInundacionFragment()
+                ManualFragmentDirections.actionNavigationDashboardToInundacionFragment()
             )
         }
 
         binding.btnTerremoto.setOnClickListener {
             findNavController().navigate(
-                ManualFragmentDirections.actionManualFragmentToTerremotoFragment()
+                ManualFragmentDirections.actionNavigationDashboardToTerremotoFragment()
             )
         }
 
     }
+
+
 }
