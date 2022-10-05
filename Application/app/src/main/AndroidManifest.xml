@@ -15,15 +15,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IncidentesAtizapan"
         tools:targetApi="31">
+
+        <!-- splashScreen Sebastian Burgos -->
+        <activity
+            android:name=".view.SplashScreen"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".Menu"
             android:exported="true"
-            android:label="@string/title_activity_menu"
-            >
+            android:label="@string/title_activity_menu">
+
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
+            <category android:name="android.intent.category.HOME" />
         </intent-filter>
         </activity>
 
@@ -31,23 +44,15 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
+        <!-- tengo duda Aidrian -->
         <activity
             android:name=".img_Inundacion"
             android:exported="false" />
+
         <activity
             android:name=".view.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- Firebase Notification Service -->
-        <!--
- no mover, splashscreen para el logo de Atizapan
-        Sebastian Burgos
-        -->
-        <activity
-            android:name=".view.SplashScreen"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -60,6 +65,7 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
     </application>
 
 </manifest>

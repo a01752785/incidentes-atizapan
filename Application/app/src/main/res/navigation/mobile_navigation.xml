@@ -19,5 +19,35 @@
         android:id="@+id/navigation_dashboard"
         android:name="mx.itesm.incidentesatizapan.view.ManualFragment"
         android:label="fragment_manual"
-        tools:layout="@layout/fragment_manual" />
+        tools:layout="@layout/fragment_manual" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_incendioFragment2"
+            app:destination="@id/incendioFragment2" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_inundacionFragment2"
+            app:destination="@id/inundacionFragment2" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_terremotoFragment"
+            app:destination="@id/terremotoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/incendioFragment2"
+        android:name="mx.itesm.incidentesatizapan.view.IncendioFragment"
+        android:label="fragment_incendio"
+        tools:layout="@layout/fragment_incendio" />
+    <fragment
+        android:id="@+id/inundacionFragment2"
+        android:name="mx.itesm.incidentesatizapan.view.InundacionFragment"
+        android:label="fragment_inundacion"
+        tools:layout="@layout/fragment_inundacion" />
+    <fragment
+        android:id="@+id/terremotoFragment"
+        android:name="mx.itesm.incidentesatizapan.view.TerremotoFragment"
+        android:label="fragment_terremoto"
+        tools:layout="@layout/fragment_terremoto" />
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="mx.itesm.incidentesatizapan.view.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>

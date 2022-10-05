@@ -36,29 +36,29 @@ class ManualFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //registerEvents()
+        registerEvents()
     }
-/*
+
     //botones para mover a los fragmentos correspondientes.
     private fun registerEvents() {
         binding.btnIncendio.setOnClickListener {
             findNavController().navigate(
-                ManualFragmentDirections.actionManualFragmentToIncendioFragment()
+                ManualFragmentDirections.actionNavigationDashboardToIncendioFragment2()
             )
         }
         binding.btnInundacion.setOnClickListener {
             findNavController().navigate(
-                ManualFragmentDirections.actionManualFragmentToInundacionFragment()
+                ManualFragmentDirections.actionNavigationDashboardToInundacionFragment2()
             )
         }
 
         binding.btnTerremoto.setOnClickListener {
             findNavController().navigate(
-                ManualFragmentDirections.actionManualFragmentToTerremotoFragment()
+                ManualFragmentDirections.actionNavigationDashboardToTerremotoFragment()
             )
         }
 
     }
 
- */
+
 }
