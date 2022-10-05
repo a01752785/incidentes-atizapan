@@ -1,7 +1,10 @@
 package mx.itesm.incidentesatizapan.model
 
+import com.squareup.okhttp.Callback
 import com.squareup.okhttp.OkHttpClient
 import com.squareup.okhttp.Request
+import com.squareup.okhttp.Response
+import java.io.IOException
 
 class WeatherAPI {
     val client = OkHttpClient()
@@ -13,6 +16,16 @@ class WeatherAPI {
         .addHeader("X-RapidAPI-Host", "weatherbit-v1-mashape.p.rapidapi.com")
         .build()
 
-    val response = client.newCall(request).execute()
+
+    val response = client.newCall(request).enqueue(object : Callback{
+        override fun onFailure(request: Request?, e: IOException?) {
+            println("fallo")
+        }
+
+        override fun onResponse(response: Response?) {
+            println("funciono")
+
+        }
+    })
 
 }

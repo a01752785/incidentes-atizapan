@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import mx.itesm.incidentesatizapan.databinding.FragmentMainBinding
 import mx.itesm.incidentesatizapan.viewmodel.MainViewModel
+import mx.itesm.incidentesatizapan.model.WeatherAPI
 
 class MainFragment : Fragment() {
 
@@ -45,3 +46,4 @@ class MainFragment : Fragment() {
 */
 
 }
+
