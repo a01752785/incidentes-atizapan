@@ -16,13 +16,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         subscribe()  //Subscribing the device onCreate
-        getWeatherAPi()
     }
 
-    private fun getWeatherAPi() {
-
-
-    }
 
     /**
      * @author Sebastian Mora

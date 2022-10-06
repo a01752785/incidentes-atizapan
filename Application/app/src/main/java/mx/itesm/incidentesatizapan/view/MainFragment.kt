@@ -1,5 +1,6 @@
 package mx.itesm.incidentesatizapan.view
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -32,6 +33,18 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         
         viewModel.clima()
+        subscribeWeather()
+    }
+
+    private fun subscribeWeather() {
+        viewModel.climadata.observe(viewLifecycleOwner){
+            //TODO Cambiar alerta por actualizacion de datos en el view
+            val alertDialog = AlertDialog.Builder(requireContext())
+                .setTitle("Info")
+                .setMessage(it.toString())
+                .setPositiveButton("Aceptar") { _, _ -> }
+            alertDialog.show()
+        }
     }
 /*
     private fun registerEvents() {
