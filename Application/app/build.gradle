@@ -48,8 +48,7 @@ dependencies {
     //Okhttp para usar en la llamada de la API del Clima
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
     implementation 'com.google.protobuf:protobuf-java-util:3.21.7'
-    //implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    //implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    
 
     //Firebase Initial Config
     implementation platform('com.google.firebase:firebase-bom:30.2.0')
