@@ -4,7 +4,8 @@
     "description": "The Incident Service connects with the database and handles requests for incidents in a particular location.",
     "main": "index.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "serve" : "node src/index.js"
     },
     "author": "David Damian",
     "license": "ISC",

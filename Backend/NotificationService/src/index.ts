@@ -2,6 +2,7 @@
 import * as admin from "firebase-admin";
 import * as express from "express";
 import * as bodyparser from "body-parser";
+import * as cookieparser from "cookie-parser";
 import * as cors from "cors";
 
 import * as AuthService from "./middleware/auth";
@@ -17,7 +18,9 @@ admin.initializeApp({
 const app = express();
 const port = process.env.PORT || 5003;
 
-app.use(cors());
+const allowedOrigins = ['http://localhost:3000']
+app.use(cors({origin : allowedOrigins, credentials: true }));
+app.use(cookieparser());
 app.use(bodyparser.urlencoded({extended : true}));
 app.use(bodyparser.json());
 
@@ -25,7 +28,7 @@ app.use(bodyparser.json());
 const topic = "all";
 
 app.get('/test', AuthService.verifyToken, (req, res) => {
-    res.send({message : "All ok"});
+    res.status(200).json({message : "Success!"});
 });
 
 // Endpoint "addNotification which expects a notification body to be sent to app"
@@ -35,11 +38,11 @@ app.post('/addNotification', AuthService.verifyToken, async (req,res) => {
     admin.messaging().send(message)
         .then(response => {
             console.log("Successfully sent message:", response);
-            res.send({code : 200, message : "Success!", messageId : response})
+            res.status(200).json({message : "Success!", messageId : response});
         })
         .catch(error => {
             console.log("Error sending message:", error);
-            res.send({code : 500, message : "Panic!", error})  
+            res.status(500).json({message : "Panic!", error}); 
         })
 });
 

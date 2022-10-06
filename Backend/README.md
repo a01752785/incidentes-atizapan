@@ -15,6 +15,7 @@ We are aiming to make the backend modularized into microservices, which are repr
 - Notification Service
 - Authentication Service
 - Databse Service 
+- Incident Service
 
 ### Deploying
 > _WARNING : To run succesfully you should have all the microservices running in your machine._

@@ -17,6 +17,7 @@ services:
       - 8001:6969
     environment:
       PORT : 6969
+      AUTH_SERVICE : http://authservice:6969
       MONGODB_CONNSTRING : mongodb://mongodb/alerta_atizapan
     depends_on:
       - mongodb
@@ -30,6 +31,15 @@ services:
       AUTH_SERVICE : http://authservice:6969
     depends_on:
       - authservice
+
+  incidentservice:
+    build: ./IncidentService
+    ports:
+      - 8003:6969
+    environment:
+      PORT : 6969
+    depends_on:
+      - databaseservice
 
   mongodb:
     image: mongo:6.0

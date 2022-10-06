@@ -3,8 +3,9 @@ import * as bodyparser from "body-parser";
 import * as cors from "cors";
 import * as mongoose from "mongoose";
 import * as argon from "argon2";
-import User from "../src/models/User";
+import * as cookieparser from "cookie-parser";
 
+import User from "./models/User";
 import UserRoutes from "./routes/UserRoutes";
 import IncidentRoutes from "./routes/IncidentRoutes";
 
@@ -12,7 +13,10 @@ import IncidentRoutes from "./routes/IncidentRoutes";
 const app = express();
 const port = process.env.PORT || 5002;
 
-app.use(cors());
+
+//const allowedOrigins = ['http://localhost:3000', 'http://authservice:6969']
+app.use(cors({origin : true, credentials: true }));
+app.use(cookieparser());
 app.use(bodyparser.urlencoded({extended : true}));
 app.use(bodyparser.json());
 
