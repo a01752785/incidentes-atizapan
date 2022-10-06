@@ -62,7 +62,10 @@ class MapsFragment : Fragment() {
 
     private fun setObservables() {
         viewModel.incidents.observe(viewLifecycleOwner) { incidents ->
-            addMarkers(incidents)
+            // Only add the markers if the map already exists
+            if (this::googleMap.isInitialized) {
+                addMarkers(incidents)
+            }
         }
     }
 
