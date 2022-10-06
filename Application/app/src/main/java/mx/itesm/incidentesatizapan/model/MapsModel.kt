@@ -15,7 +15,7 @@ class MapsModel {
      */
     fun getIncidents(): Incidents {
         val channel = ManagedChannelBuilder
-            .forAddress("192.168.1.68", 50051)
+            .forAddress("137.184.189.169", 8003)
             .usePlaintext()
             .build()
         val client = IncidentServiceClient(channel)
