@@ -1,0 +1,28 @@
+syntax = "proto2";
+
+package mx.itesm.incidentesatizapan;
+
+option java_multiple_files = true;
+
+
+// An Incident represents a real-life incident that may happen in a geographical location.
+message Climadata {
+  // The coordinates that represent the location of the incident.
+  // The name of a street, neighbourhood or place which will be used as a reference for
+  // the incident.
+  repeated Data data = 1;
+}
+
+// Incidents contains a list of Incident protos.
+message Data {
+  optional double min_temp = 1;
+  optional double max_temp = 2;
+  optional Weather weather = 3;
+  optional double temp = 4;
+
+}
+message Weather{
+  optional string icon = 1;
+  optional int32 code = 2;
+  optional string description = 3;
+}
