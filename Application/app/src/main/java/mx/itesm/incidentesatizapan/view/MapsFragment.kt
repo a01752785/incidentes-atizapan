@@ -2,21 +2,17 @@ package mx.itesm.incidentesatizapan.view
 
 import android.graphics.Color
 import androidx.fragment.app.Fragment
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.viewModels
-
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
-import com.google.android.gms.maps.model.CircleOptions
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.*
 import mx.itesm.incidentesatizapan.Incident
 import mx.itesm.incidentesatizapan.Incidents
 import mx.itesm.incidentesatizapan.viewmodel.MapsViewModel
@@ -27,8 +23,7 @@ import mx.itesm.incidentesatizapan.databinding.FragmentMapsBinding
  * @author: David Damian
  * The view for the maps fragment, which will be used to display local incidents.
  */
-class MapsFragment : Fragment() {
-
+class MapsFragment : Fragment(), GoogleMap.OnMarkerClickListener {
     private val viewModel: MapsViewModel by viewModels()
     private lateinit var binding: FragmentMapsBinding
     private lateinit var googleMap: GoogleMap
@@ -41,7 +36,9 @@ class MapsFragment : Fragment() {
          */
         val atizapan = LatLng(19.589693, -99.229509)
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(atizapan, 13F))
+        map.setOnMarkerClickListener(this)
         googleMap = map
+
         viewModel.getIncidents()
     }
     override fun onCreateView(
@@ -84,11 +81,15 @@ class MapsFragment : Fragment() {
             val icon = getIncidentTypeIcon(incident.incidentType)
 
             // Draw a marker in the location of the incident
-            googleMap.addMarker(
+            val marker = googleMap.addMarker(
                 MarkerOptions()
                     .position(LatLng(incident.coordinate.latitude, incident.coordinate.longitude))
                     .title(title)
                     .icon(BitmapDescriptorFactory.fromResource(icon)))
+
+            if (marker != null) {
+                marker.tag = incident
+            }
 
             // Draw a circle indicating the risk area that people should avoid
             // TODO: Configure a different color for each type of incident
@@ -100,8 +101,6 @@ class MapsFragment : Fragment() {
                         .strokeColor(Color.RED)
                         .fillColor(Color.argb(50, 255, 0, 0)))
             }
-
-            // TODO: Add a pop-up window to indicate the description of the incident.
         }
     }
 
@@ -121,4 +120,34 @@ class MapsFragment : Fragment() {
             null -> R.drawable.warning
         }
     }
+
+    /**
+     * This function is called when the user clicks on a map marker.
+     * @param marker, the marker clicked by the user.
+     * @return Boolean, true if the default action (centering the marker and showing the title)
+     * has been overridden and should not be performed, false otherwise.
+     */
+    override fun onMarkerClick(marker: Marker): Boolean {
+        // Animates a camera change focusing on the incident marker, and then shows the
+        // incident info.
+        googleMap.animateCamera(
+            CameraUpdateFactory.newLatLngZoom(marker.position, 16F),
+            object: GoogleMap.CancelableCallback {
+            override fun onCancel() {
+
+            }
+            override fun onFinish() {
+                val incident = marker.tag as Incident
+                val alertDialog = AlertDialog.Builder(requireContext())
+                    .setTitle(marker.title)
+                    .setMessage(incident.description)
+                    .setPositiveButton("Aceptar") { _, _ -> }
+                alertDialog.show()
+            }
+        })
+
+        // The alert dialog has shown, overriding the default marker behavior, thus returns true.
+        return true
+    }
+
 }
