@@ -38,6 +38,7 @@ services:
       - 8003:6969
     environment:
       PORT : 6969
+      DATABASE_SERVICE : http://databaseservice:6969
     depends_on:
       - databaseservice
 

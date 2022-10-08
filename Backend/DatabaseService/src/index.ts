@@ -9,6 +9,9 @@ import User from "./models/User";
 import UserRoutes from "./routes/UserRoutes";
 import IncidentRoutes from "./routes/IncidentRoutes";
 
+//Initial configuration of admin user *CHANGE INMEDIETLY PRODUCTION*
+const privateData = require("../.secret/private.json");
+
 // Configuration of express server
 const app = express();
 const port = process.env.PORT || 5002;
@@ -28,7 +31,7 @@ mongoose.connect(mongoUri);
 User.find({username : "admin"}, async (err : any, docs : Array<Object>) => {
     if (!err) {
         if (docs.length == 0) {
-            const hashPassword = await argon.hash("2022AlertaAtizapan");
+            const hashPassword = await argon.hash(privateData.adminpswd);
             let admin = new User({username : "admin", password : hashPassword});
             admin.save();
         }

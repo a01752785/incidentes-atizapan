@@ -2,6 +2,7 @@ import {Input, Button, Card, Alert} from "@material-tailwind/react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useState, Fragment} from "react";
+import { authservice } from "../constants";
 import axios from "axios";
 
 
@@ -11,7 +12,7 @@ export default function Home() {
   const [loginError, setLoginError] = useState(false);
   const onSubmit = async data => {
     try {
-      const res = await axios.post("http://localhost:5001/getToken",{"credentials" : data}, {withCredentials: true, credentials: 'include'});
+      const res = await axios.post(authservice + "/getToken",{"credentials" : data}, {withCredentials: true, credentials: 'include'});
       if (res.status == 200) {
         localStorage.setItem("authToken", res.data.token);
         router.push("/controlpanel");

@@ -10,11 +10,12 @@ import {
   DialogBody,
   DialogHeader,
   DialogFooter,
-  Alert,
+  Alert
 } from "@material-tailwind/react";
 import axios from "axios";
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
+import { notificationservice } from "../../constants";
 
 export default function NewNotification(){
   const {register, handleSubmit, formState : {errors}, reset, control} = useForm();
@@ -25,10 +26,9 @@ export default function NewNotification(){
 
   const onSubmit = async data => {
     try{
-      const response = await axios.post("http://localhost:5003/addNotification", {"notification" : data}, {withCredentials: true, credentials: 'include'});
+      const response = await axios.post(notificationservice + "/addNotification", {"notification" : data}, {withCredentials: true, credentials: 'include'});
       if (response.status == 200) {
         setCreateSuccess(true);
-        console.log("miau")
       }
     }
     catch (err) {
@@ -68,7 +68,7 @@ export default function NewNotification(){
                 name="title"
                 control={control}
                 rules={{required : true}}
-                render={({field}) => (<Select {...field} label="Titulo">
+                render={({field}) => (<Select {...field} label="Titulo" color="indigo">
                   <Option value="Indundacion">Indundacion</Option>
                   <Option value="Terremoto">Terremoto</Option>
                   <Option value="Incendio">Incendio</Option>
@@ -77,12 +77,12 @@ export default function NewNotification(){
                 />
               </div>
               <div className="mb-3">
-                <Input {...register("body", {required : true})} className='mx-auto' color='purple' variant='outlined' label='Mensaje' size='lg'/>
+                <Input {...register("body", {required : true})} className='mx-auto' color='indigo' variant='outlined' label='Mensaje' size='lg'/>
               </div>
             </section>
             }
             <section className="text-right pr-1">
-              <Button onClick={handleOpen} color="purple">Enviar</Button>
+              <Button onClick={handleOpen} color="pink">Enviar</Button>
             </section>
           </form>
           <div className="mx-auto my-2">

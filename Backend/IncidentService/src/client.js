@@ -21,7 +21,7 @@ function main() {
   if (argv.target) {
     target = argv.target;
   } else {
-    target = 'https://safeatizapan.lol:8003/';
+    target = 'localhost:5004';
   }
   var client = new incidentservice.IncidentService(target,
                                                    grpc.credentials.createInsecure());

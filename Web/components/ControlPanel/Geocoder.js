@@ -3,7 +3,7 @@ import {
 } from "@material-tailwind/react";
 import useInput from "../useinput";
 
-export default function Geocoder(){
+export default function Geocoder({setOutput}){
     const address = useInput("");
 
     return(
@@ -17,10 +17,10 @@ export default function Geocoder(){
             {address.suggestions?.length > 0 && (
                 <ul className="mt-2 py-1 px-2 border rounded-md">
                     {address.suggestions.map((suggestion, index) => {
-                        return <li key={index} className="py-2 rounded-md hover:bg-red-100" onClick={() => {
+                        return <li key={index} className="py-2 rounded-md hover:bg-red-50" onClick={() => {
                             address.setValue(suggestion.place_name);
                             address.setSuggestions([]);
-                            console.log(suggestion);
+                            setOutput(suggestion);
                         }}>{suggestion.place_name}</li>
                     })}
                 </ul>
