@@ -1,11 +1,8 @@
-package mx.itesm.incidentesatizapan
+package mx.itesm.incidentesatizapan.model
 
-import android.graphics.Color
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
-import com.google.android.gms.maps.model.CircleOptions
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import io.grpc.ManagedChannelBuilder
+import mx.itesm.incidentesatizapan.Incident
+import mx.itesm.incidentesatizapan.Incidents
 
 /**
  * @author: David Damian
@@ -18,7 +15,7 @@ class MapsModel {
      */
     fun getIncidents(): Incidents {
         val channel = ManagedChannelBuilder
-            .forAddress("192.168.1.68", 50051)
+            .forAddress("137.184.189.169", 8003)
             .usePlaintext()
             .build()
         val client = IncidentServiceClient(channel)

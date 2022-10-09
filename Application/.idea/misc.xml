@@ -3,16 +3,38 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Usuario/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Usuario/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/fragment_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Escritorio/IncidentesAtizapan/Application/app/src/main/res/layout/renglon_noti.xml" value="0.4" />
+        <entry key="..\:/Users/Usuario/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/activity_main.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/Usuario/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/fragment_main.xml" value="0.22" />
+        <entry key="..\:/Users/Usuario/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/prueba.xml" value="0.33" />
+        <entry key="..\:/Users/harum/OneDrive/Documentos/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/harum/OneDrive/Documentos/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/renglon_noti.xml" value="0.33" />
+        <entry key="..\:/Users/harum/OneDrive/Documentos/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/renglon_notif.xml" value="0.19641025641025642" />
         <entry key="..\:/Users/sebas/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/activity_main.xml" value="0.178125" />
-        <entry key="..\:/Users/sebas/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/activity_splash_screen.xml" value="0.178125" />
+        <entry key="..\:/Users/sebas/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/activity_menu.xml" value="0.16302083333333334" />
+        <entry key="..\:/Users/sebas/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/fragment_dashboard.xml" value="0.178125" />
+        <entry key="..\:/Users/sebas/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/fragment_home.xml" value="0.178125" />
         <entry key="..\:/Users/sebas/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/fragment_main.xml" value="0.178125" />
-        <entry key="..\:/Users/sebas/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/fragment_maps.xml" value="0.178125" />
+        <entry key="..\:/Users/sebas/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/fragment_manual.xml" value="0.178125" />
+        <entry key="..\:/Users/sebas/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/fragment_notifications.xml" value="0.178125" />
+        <entry key="..\:/Users/sebas/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/layout/renglon_noti.xml" value="0.178125" />
+        <entry key="..\:/Users/sebas/Documents/GitHub/incidentes-atizapan/Application/app/src/main/res/menu/bottom_nav_menu.xml" value="0.178125" />
         <entry key="..\:/android_studio/IncidentesAtizapan/Application/app/src/main/res/layout/activity_main.xml" value="0.10989583333333333" />
         <entry key="..\:/android_studio/IncidentesAtizapan/Application/app/src/main/res/layout/fragment_blank.xml" value="0.10989583333333333" />
         <entry key="..\:/android_studio/IncidentesAtizapan/Application/app/src/main/res/layout/fragment_main.xml" value="0.10989583333333333" />
         <entry key="..\:/android_studio/IncidentesAtizapan/Application/app/src/main/res/layout/fragment_maps.xml" value="0.25" />
+        <entry key="app/src/main/res/drawable/background.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/background1.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/border.xml" value="0.2185" />
+        <entry key="app/src/main/res/drawable/btnborder.xml" value="0.2185" />
+        <entry key="app/src/main/res/drawable/btnmedico.xml" value="0.2185" />
+        <entry key="app/src/main/res/drawable/downborder.xml" value="0.2185" />
+        <entry key="app/src/main/res/drawable/rightborder.xml" value="0.2185" />
+        <entry key="app/src/main/res/drawable/roundborder.xml" value="0.2185" />
+        <entry key="app/src/main/res/drawable/roundborder2.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/title_background.xml" value="0.1235" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.23020833333333332" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1785" />
       </map>
     </option>
   </component>
