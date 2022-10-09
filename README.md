@@ -3,14 +3,15 @@ El equipo de desarrollo ha planeado construir una aplicación móvil para el sis
 
 ## Tecnologías Que Usamos
 ### Applicación
-- Android Studio Chipmunk 2021.2.1 (Kotlin)
+- Android Studio Chipmunk 2021.2.1 (Dolphin)
   
 ### Web
-- Por definir (Next, Angular, SvelteKit)
+- NextJS
+- Tailwind CSS
   
 ### Backend
 - Ubuntu 20.04
 - Nginx
-- Node
-- Por definir (PocketBase, SupaBase, FireBase)
+- Docker
+- NodeJS
 - gRPC
