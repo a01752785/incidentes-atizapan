@@ -1,0 +1,28 @@
+syntax = "proto2";
+
+package mx.itesm.incidentesatizapan;
+
+option java_multiple_files = true;
+
+
+// Data about the climate
+message Climadata {
+  // An array of the prognosticated climate conditions for the current day and the next 15 days
+  repeated Data data = 1;
+}
+
+// Each data contains the values of prognosticated minimum and maximum temperatures, as well as
+// an average temperature and also contains a weather object
+message Data {
+  optional double min_temp = 1;
+  optional double max_temp = 2;
+  optional Weather weather = 3;
+  optional double temp = 4;
+
+}
+//A weather object contains a description of the weather and a code and icon for that description
+message Weather{
+  optional string icon = 1;
+  optional int32 code = 2;
+  optional string description = 3;
+}
