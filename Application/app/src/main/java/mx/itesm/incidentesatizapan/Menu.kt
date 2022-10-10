@@ -36,7 +36,6 @@ class Menu : AppCompatActivity() {
                 R.id.navigation_map
             )
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
 
