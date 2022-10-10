@@ -18,6 +18,8 @@ WORKDIR /app
 
 COPY --from=build /app/package*.json ./  
 
+ADD .secret /app/.secret/
+
 RUN npm install --omit=dev 
 
 COPY --from=build /app/dist ./dist     

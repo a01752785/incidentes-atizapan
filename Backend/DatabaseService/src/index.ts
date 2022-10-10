@@ -6,18 +6,18 @@ import * as argon from "argon2";
 import * as cookieparser from "cookie-parser";
 
 import User from "./models/User";
+
 import UserRoutes from "./routes/UserRoutes";
 import IncidentRoutes from "./routes/IncidentRoutes";
+import NotificationRoutes from "./routes/NotificationRoutes";
 
-//Initial configuration of admin user *CHANGE INMEDIETLY PRODUCTION*
+//Initial configuration of admin user *CHANGE INMEDIETLY IN PRODUCTION*
 const privateData = require("../.secret/private.json");
 
 // Configuration of express server
 const app = express();
 const port = process.env.PORT || 5002;
 
-
-//const allowedOrigins = ['http://localhost:3000', 'http://authservice:6969']
 app.use(cors({origin : true, credentials: true }));
 app.use(cookieparser());
 app.use(bodyparser.urlencoded({extended : true}));
@@ -44,6 +44,7 @@ User.find({username : "admin"}, async (err : any, docs : Array<Object>) => {
 //Add the User Routes
 app.use('/users', UserRoutes);
 app.use('/incidents', IncidentRoutes);
+app.use('/notifications', NotificationRoutes);
 
 // Starting the express server
 app.listen(port, () => console.log(`Database service is listening on http://localhost:${port}/`));

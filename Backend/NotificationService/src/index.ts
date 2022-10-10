@@ -3,6 +3,7 @@ import * as admin from "firebase-admin";
 import * as express from "express";
 import * as bodyparser from "body-parser";
 import * as cookieparser from "cookie-parser";
+import axios from "axios";
 import * as cors from "cors";
 
 import * as AuthService from "./middleware/auth";
@@ -13,6 +14,9 @@ admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://alerta-atizapan-default-rtdb.firebaseio.com"
 });
+
+//Database Sevice URI
+const databaseService = process.env.DATABASE_SERVICE || "http://localhost:5002";
 
 // Configuration of express server
 const app = express();
@@ -43,7 +47,20 @@ app.post('/addNotification', AuthService.verifyToken, async (req,res) => {
         .catch(error => {
             console.log("Error sending message:", error);
             res.status(500).json({message : "Panic!", error}); 
-        })
+        });
+    let save = {
+        "notification" : {
+            "title" : notification.title,
+            "body" : notification.body,
+            "datetime" : new Date()
+        }
+    };
+    try {
+        await axios.post(databaseService + "/notifications", save, {headers : {"x-access-token" : req.cookies["authCookie"]}});
+    }
+    catch (error) {
+        console.log({error})
+    }
 });
 
 // Starting the express server

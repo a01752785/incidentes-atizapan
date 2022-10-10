@@ -88,13 +88,55 @@ The API expects a JSON like this :
 ##### Response 
 It will send you an object containing the status code and (if the request was successfull) a list containing all the Incidents type object in the database
 
-##### GET:username (Get by username) Body Paramaters 
+##### GET:username (Get by id) Body Paramaters 
 The API expects a request like this : 
 
 `http://host:6969/incidents/:id`
 
 ##### Response 
-It will send you an object containing the status code and (if the request was successfull) an object cotaining the info about the requested user. 
+It will send you an object containing the status code and (if the request was successfull) an object cotaining the info about the requested incident. 
+
+#### Notification 
+This endpoint is in the URL :  _http://auth-service.HOST/notifications/_
+
+
+##### POST (Create Incident) Body Paramaters 
+The API expects a JSON like this : 
+
+```
+{
+	"notification" : {
+		"title" : "Title of the notification",
+		"body" : "Description of the notification",
+		"datetime" : "The exact time when the notification was sent"
+}
+```
+
+##### Response 
+It will send you a response which contains a status code and a message describing the code.
+
+```
+{
+	"code": 200,
+	"message": "Success"
+}
+```
+##### GET (Get all) Body Paramaters 
+The API expects a JSON like this : 
+
+`http://host:6969/notifications/`
+
+##### Response 
+It will send you an object containing the status code and (if the request was successfull) a list containing all the Notifications type object in the database
+
+##### GET:username (Get by id) Body Paramaters 
+The API expects a request like this : 
+
+`http://host:6969/Notifications/:id`
+
+##### Response 
+It will send you an object containing the status code and (if the request was successfull) an object cotaining the info about the requested incident. 
+
 
 ## Development
 It is being developed with Typescript on Node v18. To develop, here is a guide.
