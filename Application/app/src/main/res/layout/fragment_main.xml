@@ -5,7 +5,8 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MainFragment">
+    tools:context=".view.MainFragment"
+    android:background="@drawable/background">
 
 
     <!--Harumi & Adrian View-->
@@ -32,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="178dp"
                 android:layout_weight="1"
-                android:background="@drawable/weather_background"
+                android:background="@drawable/today_background"
                 android:orientation="vertical"
                 android:padding="5dp">
 
@@ -210,7 +211,6 @@
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:background="@drawable/title_background"
-        android:backgroundTint="#D81E5B"
         android:backgroundTintMode="add"
         android:paddingTop="25dp"
         android:text="Atizapán de Zaragoza"
@@ -246,12 +246,12 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        android:background="@drawable/today_background">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/week_background"
             android:orientation="vertical"
             android:padding="10dp"><![CDATA[>
 
@@ -294,21 +294,18 @@
 
                 <TextView
                     android:id="@+id/textView36"
-                    android:layout_width="100dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/amiko"
                     android:text="Lunes"
                     android:textSize="19sp" />
 
-                <TextView
-                    android:id="@+id/textView79"
+                <ImageView
+                    android:id="@+id/imageView13"
                     android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="26dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="🌦"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
+                    android:src="@drawable/sol_64" />
 
                 <TextView
                     android:id="@+id/textView8"
@@ -349,21 +346,18 @@
 
                 <TextView
                     android:id="@+id/textView37"
-                    android:layout_width="100dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/amiko"
                     android:text="Martes"
                     android:textSize="19sp" />
 
-                <TextView
-                    android:id="@+id/textView6"
+                <ImageView
+                    android:id="@+id/imageView14"
                     android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="26dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="🌦"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
+                    android:src="@drawable/nublado_64" />
 
                 <TextView
                     android:id="@+id/textView5"
@@ -403,21 +397,18 @@
 
                 <TextView
                     android:id="@+id/textView39"
-                    android:layout_width="100dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/amiko"
                     android:text="Miércoles"
                     android:textSize="19sp" />
 
-                <TextView
-                    android:id="@+id/textView13"
+                <ImageView
+                    android:id="@+id/imageView15"
                     android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="26dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="🌦"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
+                    android:src="@drawable/lluvia_64" />
 
                 <TextView
                     android:id="@+id/textView14"
@@ -457,21 +448,18 @@
 
                 <TextView
                     android:id="@+id/textView44"
-                    android:layout_width="100dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/amiko"
                     android:text="Jueves"
                     android:textSize="19sp" />
 
-                <TextView
-                    android:id="@+id/textView24"
+                <ImageView
+                    android:id="@+id/imageView16"
                     android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="26dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="🌦"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
+                    android:src="@drawable/parcialmentenublado_64" />
 
                 <TextView
                     android:id="@+id/textView26"
@@ -511,21 +499,18 @@
 
                 <TextView
                     android:id="@+id/textView45"
-                    android:layout_width="100dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/amiko"
                     android:text="Viernes"
                     android:textSize="19sp" />
 
-                <TextView
-                    android:id="@+id/textView29"
+                <ImageView
+                    android:id="@+id/imageView17"
                     android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="26dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="🌦"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
+                    android:src="@drawable/lluvia_64" />
 
                 <TextView
                     android:id="@+id/textView30"
@@ -565,21 +550,18 @@
 
                 <TextView
                     android:id="@+id/textView46"
-                    android:layout_width="100dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/amiko"
                     android:text="Sábado"
                     android:textSize="19sp" />
 
-                <TextView
-                    android:id="@+id/textView16"
+                <ImageView
+                    android:id="@+id/imageView18"
                     android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="26dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="🌦"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
+                    android:src="@drawable/rayo_64" />
 
                 <TextView
                     android:id="@+id/textView17"
@@ -620,21 +602,18 @@
 
                 <TextView
                     android:id="@+id/textView47"
-                    android:layout_width="100dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/amiko"
                     android:text="Domingo"
                     android:textSize="19sp" />
 
-                <TextView
-                    android:id="@+id/textView15"
+                <ImageView
+                    android:id="@+id/imageView19"
                     android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="26dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="🌦"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
+                    android:src="@drawable/parcialmentenublado_64" />
 
                 <TextView
                     android:id="@+id/textView23"
@@ -691,7 +670,7 @@
             <LinearLayout
                 android:layout_width="181dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/sensacion_background"
+                android:background="@drawable/today_background"
                 android:orientation="vertical"
                 android:padding="10dp">
 
@@ -734,7 +713,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/sensacion_background"
+                android:background="@drawable/today_background"
                 android:orientation="vertical"
                 android:padding="10dp">
 
@@ -745,26 +724,18 @@
                     android:text="Calidad del Aire"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/textView40"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content"
+                    android:text="Buena" />
 
-                    <TextView
-                        android:id="@+id/textView40"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="Buena" />
-
-                    <TextView
-                        android:id="@+id/textView38"
-                        android:layout_width="160dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="🌫"
-                        android:textSize="50sp" />
-                </LinearLayout>
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/viento_64" />
 
             </LinearLayout>
 
