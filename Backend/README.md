@@ -22,6 +22,8 @@ We are aiming to make the backend modularized into microservices, which are repr
 
 Each one of the microservices can be compressed in a docker image using the dockerfile, this repository is provided with a docker compose file thaht will handle all the images for you (and even the database!).
 
+> Important : If you want to use docker compose, you will have to set the credentials for the Mongo Container in a _.env_ file, or you can simply cutt off those lines in _docker-compose-yml_. 
+
 If you want to compile a separate image : 
 
 `docker build -t SERVICE_NAME:VERSION .`
