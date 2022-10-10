@@ -5,15 +5,14 @@ package mx.itesm.incidentesatizapan;
 option java_multiple_files = true;
 
 
-// An Incident represents a real-life incident that may happen in a geographical location.
+// Data about the climate
 message Climadata {
-  // The coordinates that represent the location of the incident.
-  // The name of a street, neighbourhood or place which will be used as a reference for
-  // the incident.
+  // An array of the prognosticated climate conditions for the current day and the next 15 days
   repeated Data data = 1;
 }
 
-// Incidents contains a list of Incident protos.
+// Each data contains the values of prognosticated minimum and maximum temperatures, as well as
+// an average temperature and also contains a weather object
 message Data {
   optional double min_temp = 1;
   optional double max_temp = 2;
@@ -21,6 +20,7 @@ message Data {
   optional double temp = 4;
 
 }
+//A weather object contains a description of the weather and a code and icon for that description
 message Weather{
   optional string icon = 1;
   optional int32 code = 2;
