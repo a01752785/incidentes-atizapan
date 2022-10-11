@@ -11,114 +11,99 @@
 
     <!--Harumi & Adrian View-->
 
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="167dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="178dp"
-                android:layout_weight="1"
-                android:background="@drawable/today_background"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/baloo_chettan"
-                    android:paddingLeft="4dp"
-                    android:paddingTop="5dp"
-                    android:text=" Clima"
-                    android:textAlignment="textStart"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingTop="2dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textView27"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/amiko"
-                            android:paddingTop="5dp"
-                            android:text="Nublado "
-                            android:textAlignment="center"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                            android:textSize="22sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:paddingLeft="15dp"
-                    android:text="18°"
-                    android:textSize="70sp" />
-                android:elevation="2dp"
-                android:background="@drawable/myrect"
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="17dp"
+            android:id="@+id/mainLayout"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"></LinearLayout>
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="190dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:background="@drawable/today_background"
-            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tvAtizapanTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/title_background"
+                android:backgroundTintMode="add"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="Atizapán de Zaragoza"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
 
             <LinearLayout
+                android:id="@+id/todayWeatherLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="172dp"
-                    android:layout_height="177dp"
+                    android:id="@+id/todayWeatherTempLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/today_background"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/tvCurrentWeatherTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/baloo_chettan"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="5dp"
+                        android:text=" Clima"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvCurrentWeather"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/amiko"
+                        android:gravity="center"
+                        android:paddingTop="5dp"
+                        android:text="Nublado "
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvCurrentTemp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingLeft="15dp"
+                        android:text="18°"
+                        android:textAlignment="center"
+                        android:textSize="70sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/todayWeatherIconLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
                     android:layout_weight="1"
+                    android:background="@drawable/today_background"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="10dp">
@@ -126,71 +111,84 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
                         android:orientation="horizontal"
                         android:paddingTop="0dp">
 
                         <TextView
-                            android:id="@+id/textView11"
-                            android:layout_width="170dp"
+                            android:id="@+id/tvTodayWeatherTitle"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/amiko"
+                            android:gravity="center"
                             android:text="Hoy"
                             android:textAlignment="center"
-                            android:gravity="center"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textStyle="bold" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="4dp"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp">
 
                         <ImageView
-                            android:id="@+id/imageView10"
-                            android:layout_width="20dp"
-                            android:layout_height="115dp"
+                            android:id="@+id/imgTodayWeather"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_weight="1"
                             android:src="@drawable/parcialmentenublado_64" />
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/todayMinMaxTempLayout"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/textView9"
-                            android:layout_width="50dp"
+                            android:id="@+id/tvTodayMinTempTitle"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginRight="2dp"
                             android:fontFamily="@font/amiko"
                             android:text="Min"
                             android:textAlignment="center"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                         <TextView
-                            android:id="@+id/textView20"
-                            android:layout_width="31dp"
+                            android:id="@+id/tvTodayMinTempVal"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="5dp"
                             android:fontFamily="@font/amiko"
                             android:text="8°"
                             android:textAlignment="center"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                         <TextView
-                            android:id="@+id/textView21"
-                            android:layout_width="50dp"
+                            android:id="@+id/tvTodayMaxTempTitle"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="2dp"
                             android:fontFamily="@font/amiko"
-                            android:text="Máx"
+                            android:text="Max"
                             android:textAlignment="center"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                         <TextView
-                            android:id="@+id/textView22"
-                            android:layout_width="match_parent"
+                            android:id="@+id/tvTodayMaxTempVal"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
                             android:fontFamily="@font/amiko"
                             android:text="24°"
                             android:textAlignment="center"
@@ -201,544 +199,508 @@
                 </LinearLayout>
 
             </LinearLayout>
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:background="@drawable/title_background"
-        android:backgroundTintMode="add"
-        android:paddingTop="25dp"
-        android:text="Atizapán de Zaragoza"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/divider4"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="?android:attr/listDivider"
-        android:backgroundTint="#121F65"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="379dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        android:background="@drawable/today_background">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp"><![CDATA[>
-
-
-            ]]>
 
             <LinearLayout
+                android:id="@+id/weekWeatherForecastLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/today_background"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView33"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Pronóstico para los próximos 7 días"
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-            </LinearLayout>
-
-            <View
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="7dp"
-                android:orientation="horizontal"></LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="1dp">
-
-                <TextView
-                    android:id="@+id/textView36"
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/amiko"
-                    android:text="Lunes"
-                    android:textSize="19sp" />
-
-                <ImageView
-                    android:id="@+id/imageView13"
-                    android:layout_width="10dp"
-                    android:layout_height="26dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/sol_64" />
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="9°"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
-
-                <ImageView
-                    android:id="@+id/imageView9"
-                    android:layout_width="50dp"
-                    android:layout_height="25dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:src="@drawable/termometro"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="22°"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="1dp">
-
-                <TextView
-                    android:id="@+id/textView37"
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/amiko"
-                    android:text="Martes"
-                    android:textSize="19sp" />
-
-                <ImageView
-                    android:id="@+id/imageView14"
-                    android:layout_width="10dp"
-                    android:layout_height="26dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/nublado_64" />
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="8°"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
-
-                <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="50dp"
-                    android:layout_height="25dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:src="@drawable/termometro"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="21°"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="1dp">
-
-                <TextView
-                    android:id="@+id/textView39"
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/amiko"
-                    android:text="Miércoles"
-                    android:textSize="19sp" />
-
-                <ImageView
-                    android:id="@+id/imageView15"
-                    android:layout_width="10dp"
-                    android:layout_height="26dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/lluvia_64" />
-
-                <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="8°"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
-
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="50dp"
-                    android:layout_height="25dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:src="@drawable/termometro"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/textView19"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="21°"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="1dp">
-
-                <TextView
-                    android:id="@+id/textView44"
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/amiko"
-                    android:text="Jueves"
-                    android:textSize="19sp" />
-
-                <ImageView
-                    android:id="@+id/imageView16"
-                    android:layout_width="10dp"
-                    android:layout_height="26dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/parcialmentenublado_64" />
-
-                <TextView
-                    android:id="@+id/textView26"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="7°"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
-
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="50dp"
-                    android:layout_height="25dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:src="@drawable/termometro"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/textView28"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="20°"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="1dp">
-
-                <TextView
-                    android:id="@+id/textView45"
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/amiko"
-                    android:text="Viernes"
-                    android:textSize="19sp" />
-
-                <ImageView
-                    android:id="@+id/imageView17"
-                    android:layout_width="10dp"
-                    android:layout_height="26dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/lluvia_64" />
-
-                <TextView
-                    android:id="@+id/textView30"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="9°"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
-
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="50dp"
-                    android:layout_height="25dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:src="@drawable/termometro"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/textView31"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="19°"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="1dp">
-
-                <TextView
-                    android:id="@+id/textView46"
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/amiko"
-                    android:text="Sábado"
-                    android:textSize="19sp" />
-
-                <ImageView
-                    android:id="@+id/imageView18"
-                    android:layout_width="10dp"
-                    android:layout_height="26dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/rayo_64" />
-
-                <TextView
-                    android:id="@+id/textView17"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="8°"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="50dp"
-                    android:layout_height="25dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:src="@drawable/termometro"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/textView18"
-                    android:layout_width="30dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="20°"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="1dp">
-
-                <TextView
-                    android:id="@+id/textView47"
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/amiko"
-                    android:text="Domingo"
-                    android:textSize="19sp" />
-
-                <ImageView
-                    android:id="@+id/imageView19"
-                    android:layout_width="10dp"
-                    android:layout_height="26dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/parcialmentenublado_64" />
-
-                <TextView
-                    android:id="@+id/textView23"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="7°"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="50dp"
-                    android:layout_height="25dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:src="@drawable/termometro"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/textView74"
-                    android:layout_width="30dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="21°"
-                    android:textAlignment="center"
-                    android:textSize="19sp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="24dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="181dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/today_background"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-                <TextView
-                    android:id="@+id/textView25"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Sensación"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
                 <LinearLayout
+                    android:id="@+id/weekWeatherForecastRowsLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/textView35"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:id="@+id/tvWeekWeatherForecastTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="20°"
+                        android:text="Pronóstico para los próximos 7 días"
                         android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <ImageView
-                        android:id="@+id/imageView11"
-                        android:layout_width="wrap_content"
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="?android:attr/listDivider" />
+
+                    <LinearLayout
+                        android:id="@+id/weekWeatherForecastRow1"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:src="@drawable/termometro_64" />
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <TextView
+                            android:id="@+id/tvWeekDayTitle1"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amiko"
+                            android:text="Lunes"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/imgWeekWeather1"
+                            android:layout_width="10dp"
+                            android:layout_height="26dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/sol_64" />
+
+                        <TextView
+                            android:id="@+id/tvWeekMinTemp1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="9°"
+                            android:textAlignment="center"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="50dp"
+                            android:layout_height="25dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:src="@drawable/termometro"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/tvWeekMaxTemp1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="22°"
+                            android:textAlignment="center"
+                            android:textSize="19sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/weekWeatherForecastRow2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <TextView
+                            android:id="@+id/tvWeekDayTitle2"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amiko"
+                            android:text="Martes"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/imgWeekWeather2"
+                            android:layout_width="10dp"
+                            android:layout_height="26dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/nublado_64" />
+
+                        <TextView
+                            android:id="@+id/tvWeekMinTemp2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="8°"
+                            android:textAlignment="center"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/imageView8"
+                            android:layout_width="50dp"
+                            android:layout_height="25dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:src="@drawable/termometro"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/tvWeekMaxTemp2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="21°"
+                            android:textAlignment="center"
+                            android:textSize="19sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/weekWeatherForecastRow3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <TextView
+                            android:id="@+id/tvWeekDayTitle3"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amiko"
+                            android:text="Miércoles"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/imgWeekWeather3"
+                            android:layout_width="10dp"
+                            android:layout_height="26dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/lluvia_64" />
+
+                        <TextView
+                            android:id="@+id/tvWeekMinTemp3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="8°"
+                            android:textAlignment="center"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="50dp"
+                            android:layout_height="25dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:src="@drawable/termometro"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/tvWeekMaxTemp3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="21°"
+                            android:textAlignment="center"
+                            android:textSize="19sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/weekWeatherForecastRow4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <TextView
+                            android:id="@+id/tvWeekDayTitle4"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amiko"
+                            android:text="Jueves"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/imgWeekWeather4"
+                            android:layout_width="10dp"
+                            android:layout_height="26dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/parcialmentenublado_64" />
+
+                        <TextView
+                            android:id="@+id/tvWeekMinTemp4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="7°"
+                            android:textAlignment="center"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="50dp"
+                            android:layout_height="25dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:src="@drawable/termometro"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/tvWeekMaxTemp4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="20°"
+                            android:textAlignment="center"
+                            android:textSize="19sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/weekWeatherForecastRow5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <TextView
+                            android:id="@+id/tvWeekDayTitle5"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amiko"
+                            android:text="Viernes"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/imgWeekWeather5"
+                            android:layout_width="10dp"
+                            android:layout_height="26dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/lluvia_64" />
+
+                        <TextView
+                            android:id="@+id/tvWeekMinTemp5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="9°"
+                            android:textAlignment="center"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="50dp"
+                            android:layout_height="25dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:src="@drawable/termometro"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/tvWeekMaxTemp5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="19°"
+                            android:textAlignment="center"
+                            android:textSize="19sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/weekWeatherForecastRow6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <TextView
+                            android:id="@+id/tvWeekDayTitle6"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amiko"
+                            android:text="Sábado"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/imgWeekWeather6"
+                            android:layout_width="10dp"
+                            android:layout_height="26dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/rayo_64" />
+
+                        <TextView
+                            android:id="@+id/tvWeekMinTemp6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="8°"
+                            android:textAlignment="center"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="50dp"
+                            android:layout_height="25dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:src="@drawable/termometro"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/tvWeekMaxTemp6"
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="20°"
+                            android:textAlignment="center"
+                            android:textSize="19sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/weekWeatherForecastRow7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <TextView
+                            android:id="@+id/tvWeekDayTitle7"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amiko"
+                            android:text="Domingo"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/imgWeekWeather7"
+                            android:layout_width="10dp"
+                            android:layout_height="26dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/parcialmentenublado_64" />
+
+                        <TextView
+                            android:id="@+id/tvWeekMinTemp7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="7°"
+                            android:textAlignment="center"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="50dp"
+                            android:layout_height="25dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:src="@drawable/termometro"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/tvWeekMaxTemp7"
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="21°"
+                            android:textAlignment="center"
+                            android:textSize="19sp" />
+
+                    </LinearLayout>
+
                 </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="17dp"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"></LinearLayout>
-
-            <LinearLayout
+                android:id="@+id/termicSensationAirQualityLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/today_background"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent">
 
-                <TextView
-                    android:id="@+id/textView34"
+                <LinearLayout
+                    android:id="@+id/termicSensationLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Calidad del Aire"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <TextView
-                    android:id="@+id/textView40"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Buena" />
-
-                <ImageView
-                    android:id="@+id/imageView12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="8dp"
                     android:layout_weight="1"
-                    android:src="@drawable/viento_64" />
+                    android:background="@drawable/today_background"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tvTermicSensationTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sensación"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvCurrentTermicSensation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="20°"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+                        <ImageView
+                            android:id="@+id/imgCurrentTermicSensation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/termometro_64" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/airQualityLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/today_background"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tvAirQualityTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Calidad del Aire"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                    <TextView
+                        android:id="@+id/tvAirQualityValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Buena" />
+
+                    <ImageView
+                        android:id="@+id/imgAirQuality"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/viento_64" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
