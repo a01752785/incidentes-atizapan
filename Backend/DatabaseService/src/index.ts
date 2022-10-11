@@ -11,7 +11,7 @@ import UserRoutes from "./routes/UserRoutes";
 import IncidentRoutes from "./routes/IncidentRoutes";
 import NotificationRoutes from "./routes/NotificationRoutes";
 
-//Initial configuration of admin user *CHANGE INMEDIETLY IN PRODUCTION*
+//Initial configuration of admin user *CHANGE IMMEDIATELY IN PRODUCTION*
 const privateData = require("../.secret/private.json");
 
 // Configuration of express server

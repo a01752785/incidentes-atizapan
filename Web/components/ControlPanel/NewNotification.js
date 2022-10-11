@@ -43,7 +43,7 @@ export default function NewNotification(){
     <Card className="w-90 mx-auto md:w-96 shadow-lg m-4">
       <CardBody className="text-center">
         <section className="text-left">
-          <h2 className="font-bold text-2xl text-pink-200">Nueva Notificacion</h2>
+          <h2 className="font-bold text-2xl text-red-300">Nueva Notificacion</h2>
         </section>
         <section className="text-left pt-2">
           <span>Crear una nueva notificacion</span>

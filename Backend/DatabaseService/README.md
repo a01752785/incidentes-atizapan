@@ -69,7 +69,7 @@ The API expects a JSON like this :
 }
 ```
 
-Remember that the attributes _latitude longitude riskradius_ are integers.
+Remember that the attributes _latitude longitude riskradius_ are doubles.
 
 ##### Response 
 It will send you a response which contains a status code and a message describing the code.
@@ -94,13 +94,13 @@ The API expects a request like this :
 `http://host:6969/incidents/:id`
 
 ##### Response 
-It will send you an object containing the status code and (if the request was successfull) an object cotaining the info about the requested incident. 
+It will send you an object containing the status code and (if the request was successfull) an object containing the info about the requested incident. 
 
 #### Notification 
 This endpoint is in the URL :  _http://auth-service.HOST/notifications/_
 
 
-##### POST (Create Incident) Body Paramaters 
+##### POST (Create Notification) Body Paramaters 
 The API expects a JSON like this : 
 
 ```

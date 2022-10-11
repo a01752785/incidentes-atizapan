@@ -24,7 +24,7 @@ const incidentsTypes = {FIRE : "Incendio", FLOODING : "Indundacion", ACCIDENT : 
 
 export default function NewIncident(){
     const {register, handleSubmit, formState : {errors}, reset, control} = useForm();
-    const [output, setOutput] =useState();
+    const [output, setOutput] = useState();
     const [withNoti, setWithNoti] = useState(false);
     const [open, setOpen] = useState(false);
     const [createError, setCreateError] = useState(false);
@@ -39,7 +39,7 @@ export default function NewIncident(){
             return;
         }
         let coordinate = {"longitude" : output.center[1], "latitude" : output.center[0]};
-        let reference_location = output.place_name;
+        let reference_location = (output.place_name).split(",").slice(0,2).join(" ");
         const incident = {
             coordinate,
             reference_location,

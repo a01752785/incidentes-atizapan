@@ -22,7 +22,7 @@ const databaseService = process.env.DATABASE_SERVICE || "http://localhost:5002";
 const app = express();
 const port = process.env.PORT || 5003;
 
-const allowedOrigins = ['http://localhost:3000']
+const allowedOrigins = ['http://localhost:3000', 'https://safeatizapan.lol'];
 app.use(cors({origin : allowedOrigins, credentials: true }));
 app.use(cookieparser());
 app.use(bodyparser.urlencoded({extended : true}));
