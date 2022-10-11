@@ -1,6 +1,6 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
 
-import {ThemeProvider} from "@material-tailwind/react";
+import { ThemeProvider } from "@material-tailwind/react";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -10,4 +10,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp
+export default MyApp;
