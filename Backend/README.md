@@ -15,11 +15,14 @@ We are aiming to make the backend modularized into microservices, which are repr
 - Notification Service
 - Authentication Service
 - Databse Service 
+- Incident Service
 
 ### Deploying
 > _WARNING : To run succesfully you should have all the microservices running in your machine._
 
 Each one of the microservices can be compressed in a docker image using the dockerfile, this repository is provided with a docker compose file thaht will handle all the images for you (and even the database!).
+
+> Important : If you want to use docker compose, you will have to set the credentials for the Mongo Container in a _.env_ file, or you can simply cutt off those lines in _docker-compose-yml_. 
 
 If you want to compile a separate image : 
 

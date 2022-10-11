@@ -3,6 +3,7 @@ import * as argon from "argon2";
 import * as express from "express";
 import * as bodyparser from "body-parser";
 import * as cors from "cors";
+import * as cookieparser from "cookie-parser";
 import axios from "axios";
 
 //Secret for encoding the JWT (Json Web Token)
@@ -15,57 +16,60 @@ const databaseService = process.env.DATABASE_SERVICE || "http://localhost:5002";
 const app = express();
 const port = process.env.PORT || 5001;
 
-app.use(cors());
+app.use(cors({ origin: true, credentials: true }));
+app.use(cookieparser());
 app.use(bodyparser.urlencoded({extended : true}));
 app.use(bodyparser.json());
+
+//Generate the token for the Auth service
+let serviceToken = jwt.sign({id : "AUTHSERVICE", username : "AUTHSERVICE"}, privateData.secret);
 
 // Endpoint for getting JWT (Json Web Token)
 app.post('/getToken', async (req ,res) => {
     let credentials = req.body.credentials;
-    axios.get(databaseService + "/users/" + credentials.username)
+    axios.get(databaseService + "/users/" + credentials.username, {headers : {"x-access-token" : serviceToken}})
         .then(async resp => {
             if (resp.data.docs.length > 0) {
                 let userData = resp.data.docs[0];
                 if (await argon.verify(userData.password, credentials.password)) {
-                    let token = jwt.sign({id : userData._id, username : userData.username},privateData.secret);
-                    res.send({code : 200, message : "Success", token})
+                    let token = jwt.sign(
+                        {id : userData._id, username : userData.username},
+                        privateData.secret
+                    );
+                    res.cookie("authCookie", token, { httpOnly: true, secure: false });
+                    res.status(200).json({message : "Success", token});
+                    return;
                 }
-                else {
-                    res.send({code : 401, message : "Wrong credentials"});
-                }
+                res.status(401).json({message : "Wrong credentials"});
+                return;
             }
             else {
-                res.send({code : 401, message : "Wrong credentials"});
+                res.status(401).json({message : "Wrong credentials"});
             }
         })
         .catch(err => {
-            res.send({code : 500, message : "Error with the databse service", err})
+            res.status(500).send({message : "Error with the databse service", err})
+            return;
         });
 });
 
 // Endpoint for verifying JWT 
 app.get('/verify', async (req,res) => {
-    let token = req.headers["x-access-token"] as string;
+    let token = req.headers["x-access-token"] || req.cookies["authCookie"];
     if (!token) {
-        res.send({code : 400, message : "No auth-token provided"});
+        res.status(400).json({message : "No auth-token provided"});
+        return;
     }
     else {
         jwt.verify(token, privateData.secret,(err : any, decoded : any) => {
-            if (err){
-                res.send({code : 401, message : "Unauthorized"});
+            if (err) {
+                res.status(401).json({message : "Unauthorized"});
+                return;
             }
-            else {
-                res.send({code : 200, message : "Authorized", decoded});
-            }
+            res.status(200).json({message : "Authorized", decoded});
+            return;
         });
     }
-});
-
-// Enpoint for registering Users (Only for development)
-app.post('/register', async (req, res) => {
-    let credentials = req.body.credentials;
-    const encriptedPswd = await argon.hash(credentials.password);
-    res.send({encriptedPswd});
 });
 
 // Starting the express server

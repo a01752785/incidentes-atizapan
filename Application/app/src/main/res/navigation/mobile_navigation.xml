@@ -51,12 +51,12 @@
         android:label="fragment_maps"
         tools:layout="@layout/fragment_maps" />
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_calls"
         android:name="mx.itesm.incidentesatizapan.view.CallsFragment"
         android:label="fragment_calls"
         tools:layout="@layout/fragment_calls" >
         <action
-            android:id="@+id/action_navigation_dashboard_to_navigation_dashboard2"
-            app:destination="@id/navigation_dashboard2" />
+            android:id="@+id/action_callsFragment_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
     </fragment>
 </navigation>

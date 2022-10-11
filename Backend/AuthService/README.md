@@ -24,11 +24,10 @@ The API expects a JSON like this :
 Where _Username_ and _Password_ is the username and password registered in the _Users_ collection in the data base
 
 ##### Response 
-It will send you a response which contains a status code, a message describing the code and last and most importantly (if the request is successful) the token that you will have to save locally to send in your future requests.
+It will send you a response which contains a status code, a message describing the code and last and most importantly (if the request is successful) a cookie with your authtoken, if you are using a web client, it will automatically send the auth-cookie for you.
 
 ```
 {
-	"code": 200,
 	"message": "Success",
 	"token": "Token"
 }
@@ -41,7 +40,11 @@ This endpoint is in the URL :  _http://auth-service.HOST/verify_
 The API expects the request to have a header like this : 
 
 ```
-    x-access-token : "The token you want to verify"
+    x-access-token : "The token you want to verify" 
+
+	# or
+
+	authCookie : "The token you want to verify" 
 ```
 
 ##### Response 
@@ -49,7 +52,6 @@ It will send you a response which contains a status code, a message describing t
 
 ```
 {
-	"code": 200,
 	"message": "Authorized",
 	"decoded": Object
 }
