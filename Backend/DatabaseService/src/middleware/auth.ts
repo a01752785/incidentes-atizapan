@@ -8,15 +8,15 @@ const authService = process.env.AUTH_SERVICE || "http://localhost:5001";
 const verifyToken = async (req : Request, res : Response, next : NextFunction) => {
     const token = req.cookies["authCookie"] || req.headers["x-access-token"];
     if (!token) {
-        return res.send({code : "403" , message : "A token is required for this action"})
+        return res.status(403).json({message : "A token is required for this action"})
     }
     const response : any = await axios.get(authService + "/verify", {headers : {"x-access-token" : token as string}})
         .catch(err => {
-            console.log({code : 500, message : "Error with the auth service", err});
+            console.log(err);
         });
 
-    if (response.status !== 200 && response.data.message !== "Authorized") {
-        return res.send({code : "403" , message : "Not authorized for the notification service"})
+    if (response.status !== 200) {
+        return res.status(403).json({message : "Not authorized for the notification service"})
     }
     return next();
 };

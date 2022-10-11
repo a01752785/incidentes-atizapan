@@ -9,8 +9,6 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
-
 #Production 
 FROM node:18-alpine AS production 
 
@@ -18,12 +16,10 @@ WORKDIR /app
 
 COPY --from=build /app/package*.json ./  
 
-ADD .secret /app/.secret/
-
 RUN npm install --omit=dev 
 
-COPY --from=build /app/dist ./dist     
+COPY --from=build /app/src ./src   
 
-EXPOSE 6969
+EXPOSE 6969 
 
 CMD ["npm" , "run", "serve"]
