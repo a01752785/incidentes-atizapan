@@ -117,7 +117,7 @@
                     android:id="@+id/textView60"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="5dp"
+                    android:layout_marginBottom="5dp"
                     android:text="▪ Guarda documentos personales y familiares en una bolsa de plástico para evitar que se dañen."
                     android:textColor="#000000" />
 
@@ -128,7 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:paddingBottom="5dp"
+                android:layout_marginBottom="5dp"
                 android:text="Después de la inundación..."
                 android:textAlignment="center"
                 android:textColor="#001D6D"
@@ -154,7 +154,7 @@
                     android:id="@+id/textView65"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="5dp"
+                    android:layout_marginBottom="5dp"
                     android:text="▪ Si tuvo que evacaur su casa, regrese solamente después de que las autoridades locales digan que es seguro hacerlo."
                     android:textColor="#000000" />
             </LinearLayout>
