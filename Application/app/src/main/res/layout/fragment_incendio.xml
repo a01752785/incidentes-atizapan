@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:paddingBottom="5dp"
+                android:layout_marginBottom="5dp"
                 android:text="Durante aviso por incendio..."
                 android:textAlignment="center"
                 android:textColor="#961313"
@@ -153,7 +153,7 @@
                     android:id="@+id/textView62"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="5dp"
+                    android:layout_marginBottom="5dp"
                     android:text="▪ En caso de evacuación no corras, no grites y no empujes."
                     android:textColor="#000000" />
             </LinearLayout>
