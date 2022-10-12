@@ -69,7 +69,7 @@
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:Layout_marginBottom="5dp"
+                android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:text="Durante aviso por inundación..."
                 android:textAlignment="center"
