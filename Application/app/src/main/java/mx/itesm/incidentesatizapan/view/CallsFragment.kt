@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.navigation.fragment.findNavController
 import mx.itesm.incidentesatizapan.databinding.FragmentCallsBinding
@@ -41,11 +42,11 @@ class CallsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        checkPermissionPhone()
 
         registerEvents()
+
     }
-    //TODO
+    //TODO poner los numeros correspondientes a los servicios
     //Botones para llamar a los numeros de los servicios.
     private fun registerEvents() {
         // Lleva a Fragmento Dashboard
@@ -54,49 +55,155 @@ class CallsFragment : Fragment() {
         }
         binding.imgbtnProteccionCivil.setOnClickListener{
 
-            callPhone("12345")
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED){
+                Toast.makeText(requireContext(),"Favor de dar permiso",Toast.LENGTH_SHORT).show()
+                checkPermissionPhone()
+            }
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+
+                callPhone("12345")
+        }
+
         }
         binding.imgbtnAngelesverdes.setOnClickListener{
-            callPhone("12")
+
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED){
+                Toast.makeText(requireContext(),"Favor de dar permiso",Toast.LENGTH_SHORT).show()
+                checkPermissionPhone()
+            }
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+
+                callPhone("21")
+            }
         }
         binding.imgbtnBomberos.setOnClickListener{
-            callPhone("5")
+
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED){
+                Toast.makeText(requireContext(),"Favor de dar permiso",Toast.LENGTH_SHORT).show()
+                checkPermissionPhone()
+            }
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+
+                callPhone("5")
+            }
         }
         binding.imgbtnCapufe.setOnClickListener{
-            callPhone("2")
+
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED){
+                Toast.makeText(requireContext(),"Favor de dar permiso",Toast.LENGTH_SHORT).show()
+                checkPermissionPhone()
+            }
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+
+                callPhone("2")
+            }
         }
         binding.imgbtnEmergency.setOnClickListener{
-            callPhone("65")
+
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED){
+                Toast.makeText(requireContext(),"Favor de dar permiso",Toast.LENGTH_SHORT).show()
+                checkPermissionPhone()
+            }
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+
+                callPhone("65")
+            }
         }
         binding.imgbtnCruzRoja.setOnClickListener{
-            callPhone("1")
+
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED){
+                Toast.makeText(requireContext(),"Favor de dar permiso",Toast.LENGTH_SHORT).show()
+                checkPermissionPhone()
+            }
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+
+                callPhone("12345")
+            }
         }
         binding.imgbtnDenunciaAnonima.setOnClickListener{
-            callPhone("10")
+
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED){
+                Toast.makeText(requireContext(),"Favor de dar permiso",Toast.LENGTH_SHORT).show()
+                checkPermissionPhone()
+            }
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+
+                callPhone("6")
+            }
         }
         binding.imgbtnFugaAgua.setOnClickListener{
-            callPhone("3")
+
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED){
+                Toast.makeText(requireContext(),"Favor de dar permiso",Toast.LENGTH_SHORT).show()
+                checkPermissionPhone()
+            }
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+
+                callPhone("3")
+            }
         }
         binding.imgbtnFugaGas.setOnClickListener{
-            callPhone("71")
+
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED){
+                Toast.makeText(requireContext(),"Favor de dar permiso",Toast.LENGTH_SHORT).show()
+                checkPermissionPhone()
+            }
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+
+                callPhone("71")
+            }
         }
         binding.imgbtnIncendioForestal.setOnClickListener{
-            callPhone("23")
+
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED){
+                Toast.makeText(requireContext(),"Favor de dar permiso",Toast.LENGTH_SHORT).show()
+                checkPermissionPhone()
+            }
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+
+                callPhone("23")
+            }
         }
         binding.imgbtnPoliciaFederal.setOnClickListener{
-            callPhone("19")
+
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED){
+                Toast.makeText(requireContext(),"Favor de dar permiso",Toast.LENGTH_SHORT).show()
+                checkPermissionPhone()
+            }
+            if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+
+                callPhone("1")
+            }
         }
     }
+    
+
+
     // Verifica el permiso del telefono
     private fun checkPermissionPhone() {
         if(ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.CALL_PHONE),101) // Check for permission
         }
-    }
+/*
+        else{
+
+            callPhone(number)
+        }
+
+ */
+
+
+       }
+
+
+
     //Recibe el numero a marcar e inicia el proceso para llamar
     private fun callPhone(number: String) {
+
         val callIntent = Intent(Intent.ACTION_CALL) // Call intent
         callIntent.data = Uri.parse("tel:$number")
         startActivity(callIntent)
+
+
     }
 }
