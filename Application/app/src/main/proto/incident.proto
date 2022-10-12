@@ -17,6 +17,22 @@ message IncidentServiceRpcRequest {
   optional double radius = 2;
 }
 
+message Date {
+  optional int32 day = 1;
+  optional int32 month = 2;
+  optional int32 year = 3;
+}
+
+message Time {
+  optional int32 hour = 1;
+  optional int32 minute = 2;
+}
+
+message Timestamp {
+  optional Date date = 1;
+  optional Time time = 2;
+}
+
 message GeoCoordinate {
   optional double latitude = 1;
   optional double longitude = 2;
@@ -48,6 +64,9 @@ message Incident {
 
   // A radius measured in meters indicating the area that people should avoid.
   optional double risk_radius = 5;
+
+  // The date and time when the incident was created.
+  optional Timestamp timestamp = 6;
 }
 
 // Incidents contains a list of Incident protos.
