@@ -27,20 +27,118 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/linearLayout7"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/contornoinundacion"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="INUNDACIÓN"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#001D6D"
+                android:textSize="35dp"
+                android:textStyle="bold"
+                app:fontFamily="More Fonts..." />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:orientation="vertical"></LinearLayout>
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:Layout_marginBottom="5dp"
+                android:gravity="center"
+                android:text="Durante aviso por inundación..."
+                android:textAlignment="center"
+                android:textColor="#001D6D"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/cantarell" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="▪ Lleve adentro las cosas que tenga afuera o amárrelas bien a un lugar fijo. "
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="▪ Si parece necesario evacuar el lugar, corte el suministro de todos los servicios públicos desde el interruptor principal y cierre la válvula principal del gas"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="▪ No abras puertas y ventanas, el fuego se extiende con el aire."
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/textView61"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="▪ Localice los lugares altos y las rutas por donde se pueda llegar a refugios seguros. "
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/textView60"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="▪ Guarda documentos personales y familiares en una bolsa de plástico para evitar que se dañen."
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView63"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="5dp"
+                android:text="Después de la inundación..."
+                android:textAlignment="center"
+                android:textColor="#001D6D"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/cantarell" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/textView64"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="▪ Evite manejar por áreas inundadas o agua estancada. "
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/textView65"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="▪ Si tuvo que evacaur su casa, regrese solamente después de que las autoridades locales digan que es seguro hacerlo."
+                    android:textColor="#000000" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
