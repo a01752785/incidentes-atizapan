@@ -1,11 +1,13 @@
 package mx.itesm.incidentesatizapan.model
 
 
+import android.graphics.drawable.Drawable
 import android.util.Log
 import com.google.common.io.Closeables.close
 import com.google.protobuf.util.JsonFormat
 import com.squareup.okhttp.*
 import mx.itesm.incidentesatizapan.Climadata
+import mx.itesm.incidentesatizapan.R
 import okhttp3.ResponseBody
 import okhttp3.internal.platform.android.AndroidLogHandler.close
 import okio.IOException
@@ -55,6 +57,10 @@ class WeatherAPI {
 
 
     }
+
+    /**
+     * Funcion que regresa el dia de la semana que fue solicitado en base a un entero
+     */
     fun getDia(dia: Int): String{
         if(dia == 1){
             return "Domingo"
@@ -78,6 +84,31 @@ class WeatherAPI {
             return "Sabado"
         }
         return "error"
+    }
+
+    /**
+     * Funcion que regresa el icono correspondiente a un codigo de icono proporsionado por la API del clima
+     */
+    fun getIcon(icon: String): Int{
+        var iconnew = R.drawable.sol_64
+        if(icon[0] == 'c' || icon[0] == 'a'){
+            if(icon == "c04d" || icon == "co2n"){
+                iconnew = R.drawable.nublado_64
+            }
+            else if(icon == "c01d"){
+                iconnew = R.drawable.sol_64
+            }
+            else{
+                iconnew = R.drawable.parcialmentenublado_64
+            }
+        }
+        if(icon[0] == 'u' || icon[0] == 'r' || icon[0] == 'd' || icon[0] == 's'){
+            iconnew = R.drawable.lluvia_64
+        }
+        if(icon[0] == 't'){
+            iconnew = R.drawable.rayo_64
+        }
+        return iconnew
     }
 
 }
