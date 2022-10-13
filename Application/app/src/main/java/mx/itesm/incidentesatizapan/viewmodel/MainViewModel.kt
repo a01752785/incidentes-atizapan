@@ -14,11 +14,15 @@ class MainViewModel : ViewModel() {
 
     val model = WeatherAPI()
     val climadata = MutableLiveData<Climadata>()
+    var dia1 = MutableLiveData<String>()
 
     /**
      * Llama a la funcion getClima del model de la API del Clima
      */
     fun clima(){
         climadata.value = model.getClima()
+    }
+    fun getdia(dia: Int){
+        dia1.value = model.getDia(dia)
     }
 }

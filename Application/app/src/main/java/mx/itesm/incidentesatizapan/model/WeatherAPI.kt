@@ -55,6 +55,29 @@ class WeatherAPI {
 
 
     }
-
+    fun getDia(dia: Int): String{
+        if(dia == 1){
+            return "Domingo"
+        }
+        if(dia == 2){
+            return "Lunes"
+        }
+        if(dia == 3){
+            return "Martes"
+        }
+        if(dia == 4){
+            return "Miercoles"
+        }
+        if(dia == 5){
+            return "Jueves"
+        }
+        if(dia == 6){
+            return "Viernes"
+        }
+        if(dia == 7){
+            return "Sabado"
+        }
+        return "error"
+    }
 
 }

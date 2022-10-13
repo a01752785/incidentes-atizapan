@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
+    android:id="@+id/manana1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.MainFragment"
@@ -56,7 +56,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tvCurrentWeather"
+                        android:id="@+id/hdes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/amiko"
@@ -69,7 +69,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tvCurrentTemp"
+                        android:id="@+id/htempavg"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -229,7 +229,7 @@
                         android:padding="1dp">
 
                         <TextView
-                            android:id="@+id/tvWeekDayTitle1"
+                            android:id="@+id/hoy"
                             android:layout_width="110dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/amiko"
@@ -244,7 +244,7 @@
                             android:src="@drawable/sol_64" />
 
                         <TextView
-                            android:id="@+id/tvWeekMinTemp1"
+                            android:id="@+id/htemp_min"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -263,7 +263,7 @@
                             android:textAlignment="center" />
 
                         <TextView
-                            android:id="@+id/tvWeekMaxTemp1"
+                            android:id="@+id/htemp_max"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -297,7 +297,7 @@
                             android:src="@drawable/nublado_64" />
 
                         <TextView
-                            android:id="@+id/tvWeekMinTemp2"
+                            android:id="@+id/m1temp_min"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -316,7 +316,7 @@
                             android:textAlignment="center" />
 
                         <TextView
-                            android:id="@+id/tvWeekMaxTemp2"
+                            android:id="@+id/m1temp_max"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -349,7 +349,7 @@
                             android:src="@drawable/lluvia_64" />
 
                         <TextView
-                            android:id="@+id/tvWeekMinTemp3"
+                            android:id="@+id/m2temp_min"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -361,14 +361,14 @@
                         <ImageView
                             android:id="@+id/imageView7"
                             android:layout_width="50dp"
-                            android:layout_height="25dp"
+                            android:layout_height="18dp"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:src="@drawable/termometro"
                             android:textAlignment="center" />
 
                         <TextView
-                            android:id="@+id/tvWeekMaxTemp3"
+                            android:id="@+id/m2temp_max"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -401,7 +401,7 @@
                             android:src="@drawable/parcialmentenublado_64" />
 
                         <TextView
-                            android:id="@+id/tvWeekMinTemp4"
+                            android:id="@+id/m3temp_min"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -420,7 +420,7 @@
                             android:textAlignment="center" />
 
                         <TextView
-                            android:id="@+id/tvWeekMaxTemp4"
+                            android:id="@+id/m3temp_max"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -453,7 +453,7 @@
                             android:src="@drawable/lluvia_64" />
 
                         <TextView
-                            android:id="@+id/tvWeekMinTemp5"
+                            android:id="@+id/m4temp_min"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -472,7 +472,7 @@
                             android:textAlignment="center" />
 
                         <TextView
-                            android:id="@+id/tvWeekMaxTemp5"
+                            android:id="@+id/m4temp_max"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -505,9 +505,9 @@
                             android:src="@drawable/rayo_64" />
 
                         <TextView
-                            android:id="@+id/tvWeekMinTemp6"
+                            android:id="@+id/m5temp_min"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="28dp"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="8°"
@@ -524,7 +524,7 @@
                             android:textAlignment="center" />
 
                         <TextView
-                            android:id="@+id/tvWeekMaxTemp6"
+                            android:id="@+id/m5temp_max"
                             android:layout_width="30dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -558,7 +558,7 @@
                             android:src="@drawable/parcialmentenublado_64" />
 
                         <TextView
-                            android:id="@+id/tvWeekMinTemp7"
+                            android:id="@+id/m6temp_min"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -577,7 +577,7 @@
                             android:textAlignment="center" />
 
                         <TextView
-                            android:id="@+id/tvWeekMaxTemp7"
+                            android:id="@+id/m6temp_max"
                             android:layout_width="30dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
