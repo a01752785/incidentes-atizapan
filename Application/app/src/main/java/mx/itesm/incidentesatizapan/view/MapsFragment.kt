@@ -114,14 +114,16 @@ class MapsFragment : Fragment(), GoogleMap.OnMarkerClickListener {
             }
 
             // Draw a circle indicating the risk area that people should avoid
-            // TODO: Configure a different color for each type of incident
+            val rgbColor = getIncidentTypeRadiusColor(incident.incidentType)
+            val strokeColor = Color.argb(255, rgbColor.first, rgbColor.second, rgbColor.third)
+            val fillColor = Color.argb(50, rgbColor.first, rgbColor.second, rgbColor.third)
             if (incident.riskRadius >= 0) {
                 googleMap.addCircle(
                     CircleOptions()
                         .center(LatLng(incident.coordinate.latitude, incident.coordinate.longitude))
                         .radius(incident.riskRadius)
-                        .strokeColor(Color.RED)
-                        .fillColor(Color.argb(50, 255, 0, 0)))
+                        .strokeColor(strokeColor)
+                        .fillColor(fillColor))
             }
         }
     }
@@ -140,6 +142,18 @@ class MapsFragment : Fragment(), GoogleMap.OnMarkerClickListener {
             Incident.IncidentType.WATER_LEAK -> R.drawable.water_leaking
             Incident.IncidentType.OTHER -> R.drawable.warning
             null -> R.drawable.warning
+        }
+    }
+
+    private fun getIncidentTypeRadiusColor(type: Incident.IncidentType?): Triple<Int, Int, Int> {
+        return when (type) {
+            Incident.IncidentType.FIRE -> Triple(255, 0, 0)
+            Incident.IncidentType.FLOODING -> Triple(0, 0, 255)
+            Incident.IncidentType.CAR_ACCIDENT -> Triple(255, 145, 61)
+            Incident.IncidentType.GAS_LEAK -> Triple(255, 255, 0)
+            Incident.IncidentType.WATER_LEAK -> Triple(78, 220, 242)
+            Incident.IncidentType.OTHER -> Triple(138, 149, 151)
+            null -> Triple(138, 149, 151)
         }
     }
 
