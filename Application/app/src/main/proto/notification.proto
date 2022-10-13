@@ -1,0 +1,30 @@
+syntax = "proto2";
+
+package mx.itesm.incidentesatizapan;
+
+option java_multiple_files = true;
+
+// A notification contains a title and a body.
+message Notification {
+  optional string title = 1;
+  optional string body = 2;
+  optional string timestamp = 3;
+
+  enum NotificationType {
+    FIRE = 0;
+    FLOODING = 1;
+    GAS_LEAK = 2;
+    WATER_LEAK = 3;
+    CAR_ACCIDENT = 4;
+    OTHER = 5;
+  }
+
+  // The type of incident.
+  optional NotificationType incident_type = 4;
+}
+
+// Notifications contains several Notification protos.
+message Notifications {
+  repeated Notification docs = 1;
+  optional int32 code = 2;
+}

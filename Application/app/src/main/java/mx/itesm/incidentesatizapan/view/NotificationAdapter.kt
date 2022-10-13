@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import mx.itesm.incidentesatizapan.Incident
+import mx.itesm.incidentesatizapan.Notification
 import mx.itesm.incidentesatizapan.R
-import mx.itesm.incidentesatizapan.model.Notification
 
 class NotificationAdapter (private val contexto : Context, var notificationArray : Array<Notification>) : RecyclerView.Adapter<NotificationAdapter.RenglonNotification>()
 {
@@ -30,10 +31,24 @@ class NotificationAdapter (private val contexto : Context, var notificationArray
     // Funcion que relaciona los items con los elementos del renglon
     class RenglonNotification(var renglonNotificacion : View)  :RecyclerView.ViewHolder(renglonNotificacion)
     {
-        fun set(courrentNotification : Notification){
-            renglonNotificacion.findViewById<TextView>(R.id.tvTitle).text = courrentNotification.title
-            renglonNotificacion.findViewById<TextView>(R.id.tvDescription).text = courrentNotification.description
-            renglonNotificacion.findViewById<ImageView>(R.id.imgNotification).setImageResource(R.drawable.noti_inundacion_64)
+        fun set(currentNotification : Notification){
+            renglonNotificacion.findViewById<TextView>(R.id.tvTitle).text = currentNotification.title
+            renglonNotificacion.findViewById<TextView>(R.id.tvDescription).text = currentNotification.body
+            renglonNotificacion.findViewById<TextView>(R.id.tvTimestamp).text = currentNotification.timestamp
+            renglonNotificacion.findViewById<ImageView>(R.id.imgNotification).setImageResource(
+                getNotificationTypeIcon(currentNotification.incidentType))
+        }
+
+        private fun getNotificationTypeIcon(type: Notification.NotificationType?): Int {
+            return when (type) {
+                Notification.NotificationType.FIRE -> R.drawable.noti_incedio_64
+                Notification.NotificationType.FLOODING -> R.drawable.noti_inundacion_64
+                Notification.NotificationType.CAR_ACCIDENT -> R.drawable.noti_car_collision_64
+                Notification.NotificationType.GAS_LEAK -> R.drawable.noti_gas_64
+                Notification.NotificationType.WATER_LEAK -> R.drawable.noti_water_leak_64
+                Notification.NotificationType.OTHER -> R.drawable.noti_bell_64
+                null -> R.drawable.warning
+            }
         }
 
     }
