@@ -58,6 +58,24 @@ class ManualFragment : Fragment() {
             )
         }
 
+        binding.btnInun.setOnClickListener {
+            findNavController().navigate(
+                ManualFragmentDirections.actionNavigationDashboardToInundacionFragment()
+            )
+        }
+
+        binding.btnSimo.setOnClickListener {
+            findNavController().navigate(
+                ManualFragmentDirections.actionNavigationDashboardToTerremotoFragment()
+            )
+        }
+
+        binding.btnince.setOnClickListener {
+            findNavController().navigate(
+                ManualFragmentDirections.actionNavigationDashboardToIncendioFragment()
+            )
+        }
+
     }
 
 
