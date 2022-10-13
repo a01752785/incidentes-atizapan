@@ -51,7 +51,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="Con los siguientes botónes podrás ver un pequeño manual con consejos y acciones a tomar que te ayudaran en caso que tú o un familiar se encuentren en el incidente. "
+                android:text="Con los siguientes botones podrás ver un pequeño manual con consejos y acciones a tomar que te ayudaran en caso que tú o un familiar se encuentren en el incidente. "
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="#000000"
                 android:textSize="20dp" />
@@ -68,14 +68,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView10"
+                <Button
+                    android:id="@+id/btnInun"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/botones"
-                    android:gravity="center"
-                    android:text="Caso de Inundación "
+                    android:text="Caso de Inundación"
                     android:textColor="#FFFFFF"
                     android:textSize="20dp" />
 
@@ -100,16 +99,16 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/textView11"
+                    <Button
+                        android:id="@+id/btnSimo"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@drawable/botones"
-                        android:gravity="center"
                         android:text="Caso de Sismo"
                         android:textColor="#FFFFFF"
                         android:textSize="20dp" />
+
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/btnTerremoto"
@@ -133,16 +132,16 @@
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="190dp"
+                    <Button
+                        android:id="@+id/btnince"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@drawable/botones"
-                        android:gravity="center"
-                        android:text="Caso de Incendio "
+                        android:text="Caso de Incendio"
                         android:textColor="#FFFFFF"
                         android:textSize="20dp" />
+
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/btnIncendio"
