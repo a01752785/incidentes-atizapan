@@ -14,15 +14,17 @@ import mx.itesm.incidentesatizapan.model.WeatherAPI
 class MainViewModel : ViewModel() {
 
     val model = WeatherAPI()
-    val climadata = MutableLiveData<Climadata>()
+    var climadata = MutableLiveData<Climadata>()
     var dia1 = MutableLiveData<String>()
     var icon1 = MutableLiveData<Int>()
 
     /**
      * Llama a la funcion getClima del model de la API del Clima
      */
+
     fun clima(){
-        climadata.value = model.getClima()
+        climadata.value = Climadata.newBuilder().build()
+        climadata.value = model.getClima("eef42780d6mshc08bc5fad1ef6b2p146a49jsn4af0732a1828", 1)
     }
 
     /**

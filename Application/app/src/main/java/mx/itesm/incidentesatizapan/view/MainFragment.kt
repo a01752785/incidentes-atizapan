@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
 import com.google.common.reflect.Reflection.getPackageName
+import mx.itesm.incidentesatizapan.Climadata
 import mx.itesm.incidentesatizapan.R
 import mx.itesm.incidentesatizapan.databinding.FragmentMainBinding
 import mx.itesm.incidentesatizapan.viewmodel.MainViewModel
@@ -41,6 +42,10 @@ class MainFragment : Fragment() {
 
     private fun subscribeWeather() {
         viewModel.climadata.observe(viewLifecycleOwner){
+            if(it == Climadata.newBuilder().build()){
+                notifyConnectionFailure()
+            }
+            else{
             var rightNow = Calendar.getInstance()
             val today = rightNow.get(7)
             var dia = today
@@ -105,7 +110,16 @@ class MainFragment : Fragment() {
                 }
                 viewModel.getdia(dia)
             }
+            }
         }
+    }
+
+    private fun notifyConnectionFailure() {
+        val alertDialog = androidx.appcompat.app.AlertDialog.Builder(requireContext())
+            .setTitle("No se ha podido cargar la información")
+            .setMessage("Verifique su conectividad a internet e inténtelo más tarde.")
+            .setPositiveButton("Aceptar") { _, _ -> }
+        alertDialog.show()
     }
 /*
     private fun registerEvents() {
