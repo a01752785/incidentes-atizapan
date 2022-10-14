@@ -35,8 +35,11 @@ class NotificationAdapter (private val contexto : Context, var notificationArray
             renglonNotificacion.findViewById<TextView>(R.id.tvTitle).text = currentNotification.title
             renglonNotificacion.findViewById<TextView>(R.id.tvDescription).text = currentNotification.body
             renglonNotificacion.findViewById<TextView>(R.id.tvTimestamp).text = currentNotification.timestamp
-            renglonNotificacion.findViewById<ImageView>(R.id.imgNotification).setImageResource(
-                getNotificationTypeIcon(currentNotification.incidentType))
+            var resource = R.drawable.noti_bell_64
+            if (currentNotification.hasIncidentType()) {
+                resource = getNotificationTypeIcon(currentNotification.incidentType)
+            }
+            renglonNotificacion.findViewById<ImageView>(R.id.imgNotification).setImageResource(resource)
         }
 
         private fun getNotificationTypeIcon(type: Notification.NotificationType?): Int {
