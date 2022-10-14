@@ -18,6 +18,8 @@ message Data {
   optional double max_temp = 2;
   optional Weather weather = 3;
   optional double temp = 4;
+  optional double app_max_temp = 5;
+  optional double wind_spd = 6;
 
 }
 //A weather object contains a description of the weather and a code and icon for that description
