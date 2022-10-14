@@ -4,14 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResult
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import mx.itesm.incidentesatizapan.Notifications
 import mx.itesm.incidentesatizapan.databinding.FragmentNotificationsBinding
-import mx.itesm.incidentesatizapan.model.Notification
 import mx.itesm.incidentesatizapan.viewmodel.NotificationsViewModel
 
 /**
@@ -19,6 +17,8 @@ import mx.itesm.incidentesatizapan.viewmodel.NotificationsViewModel
  * Fragmento en donde se ve el recyclerview de las notificaciones
  */
 class NotificationsFragment : Fragment() {
+
+    private val viewModel: NotificationsViewModel by viewModels()
 
     //binding
     private lateinit var binding : FragmentNotificationsBinding
@@ -42,23 +42,30 @@ class NotificationsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        configurarRV()
-        //configurarObservables()
+        subscribeNotifications()
+        viewModel.getNotifications()
     }
 
-    private fun configurarRV() {
-        val arrNoticias = arrayOf(Notification("Inundacion","texto",0),
-            Notification("Inundacion 2","texto 2",0))
+    private fun subscribeNotifications() {
+        viewModel.notifications.observe(viewLifecycleOwner) { notifications ->
+            configurarRV(notifications)
+        }
+    }
+
+    private fun configurarRV(notifications: Notifications) {
+        val arrNotifications = notifications.docsList.toTypedArray()
+        // Las notificaciones se muestran en orden cronologico inverso
+        arrNotifications.reverse()
+
         val layout = LinearLayoutManager(requireContext())
         //Ya no se declara, se usa la variable de instancia
-        notificationAdapter = NotificationAdapter(requireContext(), arrNoticias)
+        notificationAdapter = NotificationAdapter(requireContext(), arrNotifications)
         binding.rvNotificaciones.adapter = notificationAdapter
         binding.rvNotificaciones.layoutManager = layout
 
         // separador
         val separador = DividerItemDecoration(requireContext(), layout.orientation)
         binding.rvNotificaciones.addItemDecoration(separador)
-
     }
 
 }
