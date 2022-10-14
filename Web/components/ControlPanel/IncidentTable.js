@@ -1,4 +1,5 @@
 import { Card, CardBody } from "@material-tailwind/react";
+import { incidentIcons } from "../../constants";
 
 export default function IncidentTable(props) {
   const incidents = props.incidents;
@@ -11,21 +12,26 @@ export default function IncidentTable(props) {
             Fenomenos Activos
           </h2>
         </section>
-        <section>
-          <table class="table-auto">
+        <section className="overflow-auto relative">
+          <table className="table-fixed md:table-auto">
             <thead>
               <tr>
-                <th>Tipo</th>
-                <th>Lugar</th>
-                <th>Radio</th>
+                <th className="font-bold p-2 border-b text-left">Tipo</th>
+                <th className="font-bold p-2 border-b text-left">Lugar</th>
+                <th className="font-bold p-2 border-b text-left">Radio</th>
+                {/*Put a button to delete selected incident*/}
               </tr>
             </thead>
             <tbody>
               {incidents.map((incident) => (
-                <tr>
-                  <td>{incident.incident_type}</td>
-                  <td>{incident.reference_location}</td>
-                  <td>{incident.risk_radius}</td>
+                <tr className="hover:bg-red-100">
+                  <td className="p-2 text-left">
+                    {incidentIcons[incident.incident_type]}
+                  </td>
+                  <td className="p-2 text-left">
+                    {incident.reference_location}
+                  </td>
+                  <td className="p-2 text-left">{incident.risk_radius}</td>
                 </tr>
               ))}
             </tbody>

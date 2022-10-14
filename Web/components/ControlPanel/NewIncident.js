@@ -66,7 +66,7 @@ export default function NewIncident() {
       const response = await axios.post(
         databaseservice + "/incidents",
         { incident },
-        { withCredentials: true, credentials: "include" }
+        { headers: { "x-access-token": localStorage.getItem("authToken") } }
       );
       if (response.status == 200) {
         console.log("Created!");

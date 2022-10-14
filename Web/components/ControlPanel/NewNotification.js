@@ -35,7 +35,7 @@ export default function NewNotification() {
       const response = await axios.post(
         notificationservice + "/addNotification",
         { notification: data },
-        { withCredentials: true, credentials: "include" }
+        { headers: { "x-access-token": localStorage.getItem("authToken") } }
       );
       if (response.status == 200) {
         setCreateSuccess(true);

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
 import {
   Navbar,
   MobileNav,
@@ -22,15 +24,15 @@ export const Nav = () => {
       <Link href="/controlpanel" className="flex items-center">
         <div className="hover:bg-deep-purple-50 hover:rounded-md px-2">
           <svg
-            class="h-9 w-9 text-deep-purple-300 inline-block mx-auto my-auto pr-1 pb-1"
+            className="h-9 w-9 text-deep-purple-300 inline-block mx-auto my-auto pr-1 pb-1"
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="currentColor"
             fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             {" "}
             <path stroke="none" d="M0 0h24v24H0z" />{" "}
@@ -46,15 +48,15 @@ export const Nav = () => {
       <Link href="/dashboard" className="flex items-center">
         <div className="hover:bg-deep-purple-50 hover:rounded-md px-2">
           <svg
-            class="h-9 w-9 text-deep-purple-300 inline-block mx-auto my-auto pr-1 pb-1"
+            className="h-9 w-9 text-deep-purple-300 inline-block mx-auto my-auto pr-1 pb-1"
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="currentColor"
             fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             {" "}
             <path stroke="none" d="M0 0h24v24H0z" />{" "}
@@ -71,7 +73,18 @@ export const Nav = () => {
   return (
     <Navbar className="mx-auto w-full py-3 px-4 my-1 lg:px-8 lg:py-4 lg:my-2 shadow-md">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <h1 className="font-bold text-xl">Alerta Atizapan</h1>
+        <section className="inline-block">
+          <Image
+            src="/images/atizapan.png"
+            height={34}
+            width={44}
+            alt="logo"
+            className="inline-block float-left mx-auto my-auto"
+          />
+          <h1 className="font-bold text-xl float-right mx-2 my-2">
+            Alerta Atizapan
+          </h1>
+        </section>
         <div className="hidden lg:block">{navList}</div>
         <Button
           color="indigo"

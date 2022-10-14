@@ -24,8 +24,10 @@ export default function Home() {
         localStorage.setItem("authToken", res.data.token);
         router.push("/controlpanel");
       }
+      console.log("Miau : ", res);
     } catch (err) {
       console.log("Error con su autenticacion");
+      console.log(err);
       setLoginError(true);
     }
   };
