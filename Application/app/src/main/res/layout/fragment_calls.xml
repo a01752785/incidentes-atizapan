@@ -57,7 +57,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginBottom="15dp"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -94,7 +96,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Proteccion Civil"
+                                    android:text="Protección Civil"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
                                 <TextView
@@ -131,7 +133,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Angeles Verdes"
+                                    android:text="Ángeles Verdes"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
                                 <TextView
@@ -205,7 +207,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Denuncia Anonima"
+                                    android:text="Denuncia Anónima"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
                                 <TextView
@@ -484,44 +486,44 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:id="@+id/manual"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageButton
-                                android:id="@+id/btnLink"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0"
-                                android:src="@drawable/calls_manual_64" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/textView15"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:text="Manual"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-                                <TextView
-                                    android:id="@+id/textView16"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="2"
-                                    android:text="¿Que hacer en caso de..?" />
-                            </LinearLayout>
-                        </LinearLayout>
-
                     </LinearLayout>
                 </LinearLayout>
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/manual"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:src="@drawable/calls_manual_64" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Manual de emergencias"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="155dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="¿Qué hacer en una situación de riesgo?" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

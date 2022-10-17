@@ -193,7 +193,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="1dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/today_background"
@@ -234,7 +234,7 @@
 
                         <TextView
                             android:id="@+id/hoy"
-                            android:layout_width="110dp"
+                            android:layout_width="95dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/amiko"
                             android:text="Lunes"
@@ -242,24 +242,24 @@
 
                         <ImageView
                             android:id="@+id/imgWeekWeather1"
-                            android:layout_width="10dp"
-                            android:layout_height="26dp"
+                            android:layout_width="5dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/sol_64" />
 
                         <TextView
                             android:id="@+id/htemp_min"
-                            android:layout_width="wrap_content"
+                            android:layout_width="35dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="9°"
+                            android:text="21.2°"
                             android:textAlignment="center"
                             android:textSize="19sp" />
 
                         <ImageView
                             android:id="@+id/imageView9"
-                            android:layout_width="50dp"
+                            android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -268,11 +268,11 @@
 
                         <TextView
                             android:id="@+id/htemp_max"
-                            android:layout_width="wrap_content"
+                            android:layout_width="35dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="22°"
+                            android:text="22.3°"
                             android:textAlignment="center"
                             android:textSize="19sp" />
 
@@ -287,7 +287,7 @@
 
                         <TextView
                             android:id="@+id/tvWeekDayTitle2"
-                            android:layout_width="110dp"
+                            android:layout_width="95dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/amiko"
                             android:text="Martes"
@@ -295,24 +295,24 @@
 
                         <ImageView
                             android:id="@+id/imgWeekWeather2"
-                            android:layout_width="10dp"
-                            android:layout_height="26dp"
+                            android:layout_width="5dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/nublado_64" />
 
                         <TextView
                             android:id="@+id/m1temp_min"
-                            android:layout_width="wrap_content"
+                            android:layout_width="35dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="8°"
+                            android:text="21.5°"
                             android:textAlignment="center"
                             android:textSize="19sp" />
 
                         <ImageView
                             android:id="@+id/imageView8"
-                            android:layout_width="50dp"
+                            android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -321,7 +321,7 @@
 
                         <TextView
                             android:id="@+id/m1temp_max"
-                            android:layout_width="wrap_content"
+                            android:layout_width="35dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -339,7 +339,7 @@
 
                         <TextView
                             android:id="@+id/tvWeekDayTitle3"
-                            android:layout_width="110dp"
+                            android:layout_width="95dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/amiko"
                             android:text="Miércoles"
@@ -347,14 +347,14 @@
 
                         <ImageView
                             android:id="@+id/imgWeekWeather3"
-                            android:layout_width="10dp"
+                            android:layout_width="5dp"
                             android:layout_height="26dp"
                             android:layout_weight="1"
                             android:src="@drawable/lluvia_64" />
 
                         <TextView
                             android:id="@+id/m2temp_min"
-                            android:layout_width="wrap_content"
+                            android:layout_width="35dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -364,8 +364,8 @@
 
                         <ImageView
                             android:id="@+id/imageView7"
-                            android:layout_width="50dp"
-                            android:layout_height="18dp"
+                            android:layout_width="25dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:src="@drawable/termometro"
@@ -373,7 +373,7 @@
 
                         <TextView
                             android:id="@+id/m2temp_max"
-                            android:layout_width="wrap_content"
+                            android:layout_width="35dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -391,7 +391,7 @@
 
                         <TextView
                             android:id="@+id/tvWeekDayTitle4"
-                            android:layout_width="110dp"
+                            android:layout_width="95dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/amiko"
                             android:text="Jueves"
@@ -399,14 +399,14 @@
 
                         <ImageView
                             android:id="@+id/imgWeekWeather4"
-                            android:layout_width="10dp"
+                            android:layout_width="5dp"
                             android:layout_height="26dp"
                             android:layout_weight="1"
                             android:src="@drawable/parcialmentenublado_64" />
 
                         <TextView
                             android:id="@+id/m3temp_min"
-                            android:layout_width="wrap_content"
+                            android:layout_width="35dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -416,7 +416,7 @@
 
                         <ImageView
                             android:id="@+id/imageView6"
-                            android:layout_width="50dp"
+                            android:layout_width="30dp"
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -425,7 +425,7 @@
 
                         <TextView
                             android:id="@+id/m3temp_max"
-                            android:layout_width="wrap_content"
+                            android:layout_width="35dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -443,7 +443,7 @@
 
                         <TextView
                             android:id="@+id/tvWeekDayTitle5"
-                            android:layout_width="110dp"
+                            android:layout_width="95dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/amiko"
                             android:text="Viernes"
@@ -451,14 +451,14 @@
 
                         <ImageView
                             android:id="@+id/imgWeekWeather5"
-                            android:layout_width="10dp"
+                            android:layout_width="5dp"
                             android:layout_height="26dp"
                             android:layout_weight="1"
                             android:src="@drawable/lluvia_64" />
 
                         <TextView
                             android:id="@+id/m4temp_min"
-                            android:layout_width="wrap_content"
+                            android:layout_width="35dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -468,7 +468,7 @@
 
                         <ImageView
                             android:id="@+id/imageView5"
-                            android:layout_width="50dp"
+                            android:layout_width="30dp"
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -477,7 +477,7 @@
 
                         <TextView
                             android:id="@+id/m4temp_max"
-                            android:layout_width="wrap_content"
+                            android:layout_width="35dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -495,7 +495,7 @@
 
                         <TextView
                             android:id="@+id/tvWeekDayTitle6"
-                            android:layout_width="110dp"
+                            android:layout_width="95dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/amiko"
                             android:text="Sábado"
@@ -503,14 +503,14 @@
 
                         <ImageView
                             android:id="@+id/imgWeekWeather6"
-                            android:layout_width="10dp"
+                            android:layout_width="5dp"
                             android:layout_height="26dp"
                             android:layout_weight="1"
                             android:src="@drawable/rayo_64" />
 
                         <TextView
                             android:id="@+id/m5temp_min"
-                            android:layout_width="wrap_content"
+                            android:layout_width="35dp"
                             android:layout_height="28dp"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -520,7 +520,7 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="50dp"
+                            android:layout_width="30dp"
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -529,7 +529,7 @@
 
                         <TextView
                             android:id="@+id/m5temp_max"
-                            android:layout_width="30dp"
+                            android:layout_width="35dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -548,7 +548,7 @@
 
                         <TextView
                             android:id="@+id/tvWeekDayTitle7"
-                            android:layout_width="110dp"
+                            android:layout_width="95dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/amiko"
                             android:text="Domingo"
@@ -556,14 +556,14 @@
 
                         <ImageView
                             android:id="@+id/imgWeekWeather7"
-                            android:layout_width="10dp"
+                            android:layout_width="5dp"
                             android:layout_height="26dp"
                             android:layout_weight="1"
                             android:src="@drawable/parcialmentenublado_64" />
 
                         <TextView
                             android:id="@+id/m6temp_min"
-                            android:layout_width="wrap_content"
+                            android:layout_width="35dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -573,7 +573,7 @@
 
                         <ImageView
                             android:id="@+id/imageView3"
-                            android:layout_width="50dp"
+                            android:layout_width="30dp"
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -582,7 +582,7 @@
 
                         <TextView
                             android:id="@+id/m6temp_max"
-                            android:layout_width="30dp"
+                            android:layout_width="35dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"

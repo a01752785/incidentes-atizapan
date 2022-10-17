@@ -83,7 +83,7 @@ class WeatherAPI {
             return "Martes"
         }
         if(dia == 4){
-            return "Miercoles"
+            return "Miércoles"
         }
         if(dia == 5){
             return "Jueves"
@@ -92,7 +92,7 @@ class WeatherAPI {
             return "Viernes"
         }
         if(dia == 7){
-            return "Sabado"
+            return "Sábado"
         }
         return "error"
     }
