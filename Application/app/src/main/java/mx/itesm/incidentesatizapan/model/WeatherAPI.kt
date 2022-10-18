@@ -8,6 +8,9 @@ import com.google.protobuf.util.JsonFormat
 import com.squareup.okhttp.*
 import mx.itesm.incidentesatizapan.Climadata
 import mx.itesm.incidentesatizapan.R
+import mx.itesm.incidentesatizapan.TemperatureCategory
+import mx.itesm.incidentesatizapan.WindSpeedCategory
+import mx.itesm.incidentesatizapan.WindSpeedCategory.WindSpeedCategoryEnum
 import okhttp3.ResponseBody
 import okhttp3.internal.platform.android.AndroidLogHandler.close
 import okio.IOException
@@ -122,4 +125,107 @@ class WeatherAPI {
         return iconnew
     }
 
+    /**
+     * Returns a category according to the wind speed.
+     * @param windSpeed, the wind speed expressed in meters per second.
+     * @return WindSpeedCategory, the determined category.
+     */
+    fun getWindSpeedCategory(windSpeed: Double): WindSpeedCategory {
+        val windSpeedCategory = WindSpeedCategory.newBuilder()
+        // Less than 21 km/h
+        if (windSpeed < 5.84) {
+            windSpeedCategory.category = WindSpeedCategoryEnum.SLOW
+            windSpeedCategory.recommendationMessage = "Realice sus actividades con normalidad."
+            windSpeedCategory.dangerous = false
+        }
+        // Less than 41 km/h
+        else if (windSpeed < 11.39) {
+            windSpeedCategory.category = WindSpeedCategoryEnum.MODERATE
+            windSpeedCategory.recommendationMessage = "Realice sus actividades con normalidad."
+            windSpeedCategory.dangerous = false
+        }
+        // Less than 71 km/h
+        else if (windSpeed < 19.73) {
+            windSpeedCategory.category = WindSpeedCategoryEnum.STRONG
+            windSpeedCategory.recommendationMessage = "Resguárdese en un lugar seguro."
+            windSpeedCategory.dangerous = true
+        }
+        // Less than 120 km/h
+        else if (windSpeed < 33.4) {
+            windSpeedCategory.category = WindSpeedCategoryEnum.VERY_STRONG
+            windSpeedCategory.recommendationMessage = "Resguárdese en un lugar seguro."
+            windSpeedCategory.dangerous = true
+        }
+        else {
+            windSpeedCategory.category = WindSpeedCategoryEnum.HURRICANE
+            windSpeedCategory.recommendationMessage = "Resguárdese en un lugar seguro."
+            windSpeedCategory.dangerous = true
+        }
+        return windSpeedCategory.build()
+    }
+
+    /**
+     * Returns a string with the name of the wind speed category.
+     * @param category, the category which name has to be determined.
+     * @return String, the name of the category.
+     */
+    fun getWindSpeedCategoryName(category: WindSpeedCategoryEnum): String {
+        return when (category) {
+            WindSpeedCategoryEnum.SLOW -> "LENTA"
+            WindSpeedCategoryEnum.MODERATE -> "MODERADA"
+            WindSpeedCategoryEnum.STRONG -> "FUERTE"
+            WindSpeedCategoryEnum.VERY_STRONG -> "MUY FUERTE"
+            WindSpeedCategoryEnum.HURRICANE -> "HURACANADA"
+        }
+    }
+
+    /**
+     * Returns a category according to the temperature.
+     * @param temperature, the temperature expressed in Celsius degrees.
+     * @return Temperature, the determined category.
+     */
+    fun getTemperatureCategory(temperature: Double): TemperatureCategory {
+        val temperatureCategory = TemperatureCategory.newBuilder()
+        if (temperature < 0) {
+            temperatureCategory.category = TemperatureCategory.TemperatureCategoryEnum.VERY_COLD
+            temperatureCategory.recommendationMessage = "Resguárdese del frío."
+            temperatureCategory.dangerous = true
+        }
+        else if (temperature < 5) {
+            temperatureCategory.category = TemperatureCategory.TemperatureCategoryEnum.COLD
+            temperatureCategory.recommendationMessage = "Resguárdese del frío."
+            temperatureCategory.dangerous = true
+        }
+        else if (temperature < 25) {
+            temperatureCategory.category = TemperatureCategory.TemperatureCategoryEnum.AMBIENCE
+            temperatureCategory.recommendationMessage = "Realice sus actividades con normalidad."
+            temperatureCategory.dangerous = false
+        }
+        else if (temperature < 35) {
+            temperatureCategory.category = TemperatureCategory.TemperatureCategoryEnum.HOT
+            temperatureCategory.recommendationMessage = "Resguárdese en la sombra y manténgase hidratado."
+            temperatureCategory.dangerous = true
+        }
+        else {
+            temperatureCategory.category = TemperatureCategory.TemperatureCategoryEnum.VERY_HOT
+            temperatureCategory.recommendationMessage = "Resguárdese en la sombra y manténgase hidratado."
+            temperatureCategory.dangerous = true
+        }
+        return temperatureCategory.build()
+    }
+
+    /**
+     * Returns a string with the name of the temperature category.
+     * @param category, the category which name has to be determined.
+     * @return String, the name of the category.
+     */
+    fun getTemperatureCategoryName(category: TemperatureCategory.TemperatureCategoryEnum): String {
+        return when (category) {
+            TemperatureCategory.TemperatureCategoryEnum.VERY_COLD -> "FRÍO EXTREMO"
+            TemperatureCategory.TemperatureCategoryEnum.COLD -> "FRÍO"
+            TemperatureCategory.TemperatureCategoryEnum.AMBIENCE -> "TEMPLADO"
+            TemperatureCategory.TemperatureCategoryEnum.HOT -> "CALOR"
+            TemperatureCategory.TemperatureCategoryEnum.VERY_HOT -> "CALOR EXTREMO"
+        }
+    }
 }

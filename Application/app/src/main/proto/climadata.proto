@@ -28,3 +28,29 @@ message Weather{
   optional int32 code = 2;
   optional string description = 3;
 }
+
+message WindSpeedCategory {
+  enum WindSpeedCategoryEnum {
+    SLOW = 0;
+    MODERATE = 1;
+    STRONG = 2;
+    VERY_STRONG = 3;
+    HURRICANE = 4;
+  }
+  optional WindSpeedCategoryEnum category = 1;
+  optional string recommendation_message = 2;
+  optional bool dangerous = 3;
+}
+
+message TemperatureCategory {
+  enum TemperatureCategoryEnum {
+    VERY_COLD = 0;
+    COLD = 1;
+    AMBIENCE = 2;
+    HOT = 3;
+    VERY_HOT = 4;
+  }
+  optional TemperatureCategoryEnum category = 1;
+  optional string recommendation_message = 2;
+  optional bool dangerous = 3;
+}

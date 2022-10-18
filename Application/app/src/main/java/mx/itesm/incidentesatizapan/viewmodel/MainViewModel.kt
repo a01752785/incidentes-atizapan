@@ -5,6 +5,10 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import mx.itesm.incidentesatizapan.Climadata
+import mx.itesm.incidentesatizapan.TemperatureCategory
+import mx.itesm.incidentesatizapan.TemperatureCategory.TemperatureCategoryEnum
+import mx.itesm.incidentesatizapan.WindSpeedCategory
+import mx.itesm.incidentesatizapan.WindSpeedCategory.WindSpeedCategoryEnum
 import mx.itesm.incidentesatizapan.model.WeatherAPI
 
 /**
@@ -17,6 +21,8 @@ class MainViewModel : ViewModel() {
     var climadata = MutableLiveData<Climadata>()
     var dia1 = MutableLiveData<String>()
     var icon1 = MutableLiveData<Int>()
+    var windSpeedCategory = MutableLiveData<WindSpeedCategory>()
+    val temperatureCategory = MutableLiveData<TemperatureCategory>()
 
     /**
      * Llama a la funcion getClima del model de la API del Clima
@@ -40,5 +46,21 @@ class MainViewModel : ViewModel() {
      */
     fun getIcon(icon: String){
         icon1.value = model.getIcon(icon)
+    }
+
+    fun getWindSpeedCategory(windSpeed: Double) {
+        windSpeedCategory.value = model.getWindSpeedCategory(windSpeed)
+    }
+
+    fun getWindSpeedCategoryName(windSpeedCategoryEnum: WindSpeedCategoryEnum): String {
+        return model.getWindSpeedCategoryName(windSpeedCategoryEnum)
+    }
+
+    fun getTemperatureCategory(temperature: Double) {
+        temperatureCategory.value = model.getTemperatureCategory(temperature)
+    }
+
+    fun getTemperatureCategoryName(temperatureCategoryEnum: TemperatureCategoryEnum): String {
+        return model.getTemperatureCategoryName(temperatureCategoryEnum)
     }
 }
