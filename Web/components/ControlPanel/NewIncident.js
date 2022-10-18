@@ -28,7 +28,7 @@ const incidentsTypes = {
   WATER_LEAK: "Fuga de Agua",
 };
 
-export default function NewIncident() {
+export default function NewIncident(props) {
   const {
     register,
     handleSubmit,
@@ -51,10 +51,10 @@ export default function NewIncident() {
       return;
     }
     let coordinate = {
-      longitude: output.center[1],
-      latitude: output.center[0],
+      longitude: output.center[0],
+      latitude: output.center[1],
     };
-    let reference_location = output.place_name.split(",").slice(0, 2).join(" ");
+    let reference_location = output.place_name.split(",").slice(0, 1).join(" ");
     const incident = {
       coordinate,
       reference_location,
@@ -97,6 +97,7 @@ export default function NewIncident() {
       }
     }
     setOpen(false);
+    props.getIncidents();
   };
 
   const handleOpen = () => setOpen(!open);
@@ -121,7 +122,7 @@ export default function NewIncident() {
               className="bg-red-200"
             >
               <Switch
-                label="Añadir notificacion"
+                label="Añadir notificación"
                 color="red"
                 onChange={() => setWithNoti(!withNoti)}
               />
@@ -136,7 +137,7 @@ export default function NewIncident() {
                 <Textarea
                   {...register("description", { required: true })}
                   color="red"
-                  label="Descripcion"
+                  label="Descripción"
                 />
               </div>
               <div className="mb-3">
@@ -148,7 +149,7 @@ export default function NewIncident() {
                     <Select {...field} color="red" label="Tipo">
                       <Option value="FIRE">Incendio</Option>
                       <Option value="FLOODING">Indundacion</Option>
-                      <Option value="ACCIDENT">Accidente</Option>
+                      <Option value="CAR_ACCIDENT">Accidente</Option>
                       <Option value="GAS_LEAK">Fuga de Gas</Option>
                       <Option value="WATER_LEAK">Fuga de Agua</Option>
                       <Option value="OTHER">Otro</Option>

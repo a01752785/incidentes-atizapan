@@ -9,7 +9,7 @@ export default function Geocoder({ setOutput }) {
       <Input
         type="text"
         {...address}
-        label="Ubicacion"
+        label="Ubicación"
         color="red"
         size="lg"
         icon={

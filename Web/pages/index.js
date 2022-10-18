@@ -48,7 +48,7 @@ export default function Home() {
               <h1 className="font-bold text-4xl text-center my-4">
                 Bienvenido
               </h1>
-              <p className="text-slate-100 mb-2">Ingresa tus credenicales.</p>
+              <p className="text-slate-100 mb-2">Ingresa tus credenciales.</p>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-4">
                   <Input
@@ -82,7 +82,7 @@ export default function Home() {
                     size="lg"
                     color="purple"
                   >
-                    Iniciar Sesion
+                    Iniciar Sesión
                   </Button>
                 </div>
                 <div className="mx-auto my-2">

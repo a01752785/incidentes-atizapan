@@ -32,7 +32,7 @@ export default function ControlPanel() {
           <StateMap incidents={incidents} />
         </div>
         <div className="ml-6">
-          <IncidentTable incidents={incidents} />
+          <IncidentTable incidents={incidents} getIncidents={getIncidents} />
         </div>
       </section>
       <section className="lg:inline-block align-top">
@@ -40,7 +40,7 @@ export default function ControlPanel() {
           <NewNotification />
         </div>
         <div className="w-full lg:w-auto">
-          <NewIncident />
+          <NewIncident getIncidents={getIncidents} />
         </div>
       </section>
     </section>

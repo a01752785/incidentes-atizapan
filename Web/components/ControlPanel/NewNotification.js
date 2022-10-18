@@ -53,11 +53,11 @@ export default function NewNotification() {
       <CardBody className="text-center">
         <section className="text-left">
           <h2 className="font-bold text-2xl text-red-300">
-            Nueva Notificacion
+            Nueva Notificación
           </h2>
         </section>
         <section className="text-left pt-2">
-          <span>Crear una nueva notificacion</span>
+          <span>Crear una nueva notificación</span>
           <div className="ml-1 mt-2">
             <Switch
               onChange={() => {
@@ -66,7 +66,7 @@ export default function NewNotification() {
               }}
               color="indigo"
               id="auto-update"
-              label="Notificacion Personalizada"
+              label="Notificación Personalizada"
             />
           </div>
           <form>
@@ -76,9 +76,9 @@ export default function NewNotification() {
                   <Input
                     {...register("title", { required: true })}
                     className="mx-auto"
-                    color="purple"
+                    color="red"
                     variant="outlined"
-                    label="Titulo"
+                    label="Título"
                     size="lg"
                   />
                 </div>
@@ -86,7 +86,7 @@ export default function NewNotification() {
                   <Input
                     {...register("body", { required: true })}
                     className="mx-auto"
-                    color="purple"
+                    color="red"
                     variant="outlined"
                     label="Mensaje"
                     size="lg"
@@ -102,7 +102,7 @@ export default function NewNotification() {
                     control={control}
                     rules={{ required: true }}
                     render={({ field }) => (
-                      <Select {...field} label="Titulo" color="indigo">
+                      <Select {...field} label="Título" color="red">
                         <Option value="Indundacion">Indundacion</Option>
                         <Option value="Terremoto">Terremoto</Option>
                         <Option value="Incendio">Incendio</Option>
@@ -115,7 +115,7 @@ export default function NewNotification() {
                   <Input
                     {...register("body", { required: true })}
                     className="mx-auto"
-                    color="indigo"
+                    color="red"
                     variant="outlined"
                     label="Mensaje"
                     size="lg"
@@ -124,7 +124,7 @@ export default function NewNotification() {
               </section>
             )}
             <section className="text-right pr-1">
-              <Button onClick={handleOpen} color="pink">
+              <Button onClick={handleOpen} color="red">
                 Enviar
               </Button>
             </section>

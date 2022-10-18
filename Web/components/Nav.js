@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,6 +12,7 @@ import {
 
 export const Nav = () => {
   const [openNav, setOpenNav] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     window.addEventListener(
@@ -18,6 +20,11 @@ export const Nav = () => {
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
+
+  const onCloseSesion = () => {
+    localStorage.removeItem("authToken");
+    router.push("/");
+  };
 
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:gap-6">
@@ -82,7 +89,7 @@ export const Nav = () => {
             className="inline-block float-left mx-auto my-auto"
           />
           <h1 className="font-bold text-xl float-right mx-2 my-2">
-            Alerta Atizapan
+            Alerta Atizapán
           </h1>
         </section>
         <div className="hidden lg:block">{navList}</div>
@@ -91,8 +98,9 @@ export const Nav = () => {
           variant="gradient"
           size="md"
           className="hidden lg:inline-block"
+          onClick={onCloseSesion}
         >
-          <span>Cerrar Sesion</span>
+          <span>Cerrar Sesión</span>
         </Button>
         <IconButton
           variant="text"
@@ -140,8 +148,9 @@ export const Nav = () => {
           size="md"
           fullWidth
           className="mb-2"
+          onClick={onCloseSesion}
         >
-          <span>Cerrar Sesion</span>
+          <span>Cerrar Sesión</span>
         </Button>
       </MobileNav>
     </Navbar>

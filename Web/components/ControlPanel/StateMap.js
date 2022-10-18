@@ -39,9 +39,9 @@ export default function StateMap(props) {
           ref={mapRef}
           reuseMaps
           initialViewState={{
-            latitude: 19.59387,
-            longitude: -99.25025,
-            zoom: 11,
+            latitude: 19.56831,
+            longitude: -99.2399,
+            zoom: 12,
           }}
           style={{ width: "100%", height: 400 }}
           mapStyle="mapbox://styles/mapbox/streets-v9"
@@ -54,17 +54,16 @@ export default function StateMap(props) {
           {incidents.map((incident, index) => (
             <Marker
               key={`marker-${index}`}
-              latitude={incident.coordinate.longitude}
-              longitude={incident.coordinate.latitude}
+              latitude={incident.coordinate.latitude}
+              longitude={incident.coordinate.longitude}
               anchor="bottom"
+              color="red"
               onClick={(e) => {
                 e.originalEvent.stopPropagation();
                 onSelectIncident(incident);
                 setPopupInfo(incident);
               }}
-            >
-              <Pin />
-            </Marker>
+            ></Marker>
           ))}
 
           {popupInfo && (
@@ -75,7 +74,10 @@ export default function StateMap(props) {
               onClose={() => setPopupInfo(null)}
             >
               <div>{incidentIcons[popupInfo.incident_type]}</div>
-              //Put more info about theincident
+              <ul>
+                <li>Lugar : {popupInfo.reference_location}</li>
+                <li>Hora : {popupInfo.timestamp}</li>
+              </ul>
             </Popup>
           )}
         </Map>
