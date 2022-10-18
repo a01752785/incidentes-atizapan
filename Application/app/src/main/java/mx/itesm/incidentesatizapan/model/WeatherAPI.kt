@@ -8,6 +8,8 @@ import com.google.protobuf.util.JsonFormat
 import com.squareup.okhttp.*
 import mx.itesm.incidentesatizapan.Climadata
 import mx.itesm.incidentesatizapan.R
+import mx.itesm.incidentesatizapan.WindSpeedCategory
+import mx.itesm.incidentesatizapan.WindSpeedCategory.WindSpeedCategoryEnum
 import okhttp3.ResponseBody
 import okhttp3.internal.platform.android.AndroidLogHandler.close
 import okio.IOException
@@ -120,6 +122,60 @@ class WeatherAPI {
             iconnew = R.drawable.rayo_64
         }
         return iconnew
+    }
+
+    /**
+     * Returns a category according to the wind speed.
+     * @param windSpeed, the wind speed expressed in meters per second.
+     * @return WindSpeedCategory, the determined category.
+     */
+    fun getWindSpeedCategory(windSpeed: Double): WindSpeedCategory {
+        val windSpeedCategory = WindSpeedCategory.newBuilder()
+        // Less than 21 km/h
+        if (windSpeed < 5.84) {
+            windSpeedCategory.category = WindSpeedCategoryEnum.SLOW
+            windSpeedCategory.recommendationMessage = "Realice sus actividades con normalidad."
+            windSpeedCategory.dangerous = false
+        }
+        // Less than 41 km/h
+        else if (windSpeed < 11.39) {
+            windSpeedCategory.category = WindSpeedCategoryEnum.MODERATE
+            windSpeedCategory.recommendationMessage = "Realice sus actividades con normalidad."
+            windSpeedCategory.dangerous = false
+        }
+        // Less than 71 km/h
+        else if (windSpeed < 19.73) {
+            windSpeedCategory.category = WindSpeedCategoryEnum.STRONG
+            windSpeedCategory.recommendationMessage = "Resguárdese en un lugar seguro."
+            windSpeedCategory.dangerous = true
+        }
+        // Less than 120 km/h
+        else if (windSpeed < 33.4) {
+            windSpeedCategory.category = WindSpeedCategoryEnum.VERY_STRONG
+            windSpeedCategory.recommendationMessage = "Resguárdese en un lugar seguro."
+            windSpeedCategory.dangerous = true
+        }
+        else {
+            windSpeedCategory.category = WindSpeedCategoryEnum.HURRICANE
+            windSpeedCategory.recommendationMessage = "Resguárdese en un lugar seguro."
+            windSpeedCategory.dangerous = true
+        }
+        return windSpeedCategory.build()
+    }
+
+    /**
+     * Returns a string with the name of the wind speed category.
+     * @param category, the category which name has to be determined.
+     * @return String, the name of the category.
+     */
+    fun getWindSpeedCategoryName(category: WindSpeedCategoryEnum): String {
+        return when (category) {
+            WindSpeedCategoryEnum.SLOW -> "LENTA"
+            WindSpeedCategoryEnum.MODERATE -> "MODERADA"
+            WindSpeedCategoryEnum.STRONG -> "FUERTE"
+            WindSpeedCategoryEnum.VERY_STRONG -> "MUY FUERTE"
+            WindSpeedCategoryEnum.HURRICANE -> "HURACANADA"
+        }
     }
 
 }
