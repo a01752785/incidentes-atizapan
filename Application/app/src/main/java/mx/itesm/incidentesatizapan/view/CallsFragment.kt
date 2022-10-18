@@ -61,7 +61,7 @@ class CallsFragment : Fragment() {
             }
             if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
 
-                callPhone("12345")
+                callPhone("5551280000")
         }
 
         }
@@ -73,7 +73,7 @@ class CallsFragment : Fragment() {
             }
             if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
 
-                callPhone("21")
+                callPhone("078")
             }
         }
         binding.imgbtnBomberos.setOnClickListener{
@@ -84,7 +84,7 @@ class CallsFragment : Fragment() {
             }
             if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
 
-                callPhone("5")
+                callPhone("5536221004")
             }
         }
         binding.imgbtnCapufe.setOnClickListener{
@@ -95,7 +95,7 @@ class CallsFragment : Fragment() {
             }
             if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
 
-                callPhone("2")
+                callPhone("074")
             }
         }
         binding.imgbtnEmergency.setOnClickListener{
@@ -106,7 +106,7 @@ class CallsFragment : Fragment() {
             }
             if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
 
-                callPhone("65")
+                callPhone("911")
             }
         }
         binding.imgbtnCruzRoja.setOnClickListener{
@@ -117,7 +117,7 @@ class CallsFragment : Fragment() {
             }
             if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
 
-                callPhone("12345")
+                callPhone("5553951111")
             }
         }
         binding.imgbtnDenunciaAnonima.setOnClickListener{
@@ -128,7 +128,7 @@ class CallsFragment : Fragment() {
             }
             if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
 
-                callPhone("6")
+                callPhone("089")
             }
         }
         binding.imgbtnFugaAgua.setOnClickListener{
@@ -139,7 +139,7 @@ class CallsFragment : Fragment() {
             }
             if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
 
-                callPhone("3")
+                callPhone("5510836700")
             }
         }
         binding.imgbtnFugaGas.setOnClickListener{
@@ -150,7 +150,7 @@ class CallsFragment : Fragment() {
             }
             if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
 
-                callPhone("71")
+                callPhone("911")
             }
         }
         binding.imgbtnIncendioForestal.setOnClickListener{
@@ -161,7 +161,7 @@ class CallsFragment : Fragment() {
             }
             if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
 
-                callPhone("23")
+                callPhone("3337777000")
             }
         }
         binding.imgbtnPoliciaFederal.setOnClickListener{
@@ -172,7 +172,7 @@ class CallsFragment : Fragment() {
             }
             if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
 
-                callPhone("1")
+                callPhone("088")
             }
         }
     }
