@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.common.reflect.Reflection.getPackageName
 import mx.itesm.incidentesatizapan.Climadata
 import mx.itesm.incidentesatizapan.R
+import mx.itesm.incidentesatizapan.TemperatureCategory
 import mx.itesm.incidentesatizapan.WindSpeedCategory
 import mx.itesm.incidentesatizapan.databinding.FragmentMainBinding
 import mx.itesm.incidentesatizapan.viewmodel.MainViewModel
@@ -40,12 +41,21 @@ class MainFragment : Fragment() {
         viewModel.clima()
         subscribeWeather()
         subscribeWindCategory()
+        subscribeTemperatureCategory()
     }
 
     private fun subscribeWindCategory() {
         viewModel.windSpeedCategory.observe(viewLifecycleOwner) { windSpeedCategory ->
             if (windSpeedCategory.dangerous) {
                 showWindSpeedCategory(windSpeedCategory)
+            }
+        }
+    }
+
+    private fun subscribeTemperatureCategory() {
+        viewModel.temperatureCategory.observe(viewLifecycleOwner) { temperatureCategory ->
+            if (temperatureCategory.dangerous) {
+                showTemperatureCategory(temperatureCategory)
             }
         }
     }
@@ -58,7 +68,7 @@ class MainFragment : Fragment() {
             else{
                 populateWeatherInfo(climaData)
                 viewModel.getWindSpeedCategory(climaData.getData(0).windSpd)
-                viewModel.getTemperatureCategory()
+                viewModel.getTemperatureCategory(climaData.getData(0).temp)
             }
         }
     }
@@ -142,6 +152,15 @@ class MainFragment : Fragment() {
             .setTitle("Velocidad del viento " +
                     viewModel.getWindSpeedCategoryName(windSpeedCategory.category))
             .setMessage(windSpeedCategory.recommendationMessage)
+            .setPositiveButton("Aceptar") { _, _ -> }
+        alertDialog.show()
+    }
+
+    private fun showTemperatureCategory(temperatureCategory: TemperatureCategory) {
+        val alertDialog = androidx.appcompat.app.AlertDialog.Builder(requireContext())
+            .setTitle("Alerta de temperatura: " +
+                    viewModel.getTemperatureCategoryName(temperatureCategory.category))
+            .setMessage(temperatureCategory.recommendationMessage)
             .setPositiveButton("Aceptar") { _, _ -> }
         alertDialog.show()
     }

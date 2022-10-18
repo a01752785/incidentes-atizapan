@@ -8,6 +8,7 @@ import com.google.protobuf.util.JsonFormat
 import com.squareup.okhttp.*
 import mx.itesm.incidentesatizapan.Climadata
 import mx.itesm.incidentesatizapan.R
+import mx.itesm.incidentesatizapan.TemperatureCategory
 import mx.itesm.incidentesatizapan.WindSpeedCategory
 import mx.itesm.incidentesatizapan.WindSpeedCategory.WindSpeedCategoryEnum
 import okhttp3.ResponseBody
@@ -178,4 +179,53 @@ class WeatherAPI {
         }
     }
 
+    /**
+     * Returns a category according to the temperature.
+     * @param temperature, the temperature expressed in Celsius degrees.
+     * @return Temperature, the determined category.
+     */
+    fun getTemperatureCategory(temperature: Double): TemperatureCategory {
+        val temperatureCategory = TemperatureCategory.newBuilder()
+        if (temperature < 0) {
+            temperatureCategory.category = TemperatureCategory.TemperatureCategoryEnum.VERY_COLD
+            temperatureCategory.recommendationMessage = "Resguárdese del frío."
+            temperatureCategory.dangerous = true
+        }
+        else if (temperature < 5) {
+            temperatureCategory.category = TemperatureCategory.TemperatureCategoryEnum.COLD
+            temperatureCategory.recommendationMessage = "Resguárdese del frío."
+            temperatureCategory.dangerous = true
+        }
+        else if (temperature < 25) {
+            temperatureCategory.category = TemperatureCategory.TemperatureCategoryEnum.AMBIENCE
+            temperatureCategory.recommendationMessage = "Realice sus actividades con normalidad."
+            temperatureCategory.dangerous = false
+        }
+        else if (temperature < 35) {
+            temperatureCategory.category = TemperatureCategory.TemperatureCategoryEnum.HOT
+            temperatureCategory.recommendationMessage = "Resguárdese en la sombra y manténgase hidratado."
+            temperatureCategory.dangerous = true
+        }
+        else {
+            temperatureCategory.category = TemperatureCategory.TemperatureCategoryEnum.VERY_HOT
+            temperatureCategory.recommendationMessage = "Resguárdese en la sombra y manténgase hidratado."
+            temperatureCategory.dangerous = true
+        }
+        return temperatureCategory.build()
+    }
+
+    /**
+     * Returns a string with the name of the temperature category.
+     * @param category, the category which name has to be determined.
+     * @return String, the name of the category.
+     */
+    fun getTemperatureCategoryName(category: TemperatureCategory.TemperatureCategoryEnum): String {
+        return when (category) {
+            TemperatureCategory.TemperatureCategoryEnum.VERY_COLD -> "FRÍO EXTREMO"
+            TemperatureCategory.TemperatureCategoryEnum.COLD -> "FRÍO"
+            TemperatureCategory.TemperatureCategoryEnum.AMBIENCE -> "TEMPLADO"
+            TemperatureCategory.TemperatureCategoryEnum.HOT -> "CALOR"
+            TemperatureCategory.TemperatureCategoryEnum.VERY_HOT -> "CALOR EXTREMO"
+        }
+    }
 }

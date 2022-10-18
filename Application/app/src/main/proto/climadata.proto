@@ -41,3 +41,16 @@ message WindSpeedCategory {
   optional string recommendation_message = 2;
   optional bool dangerous = 3;
 }
+
+message TemperatureCategory {
+  enum TemperatureCategoryEnum {
+    VERY_COLD = 0;
+    COLD = 1;
+    AMBIENCE = 2;
+    HOT = 3;
+    VERY_HOT = 4;
+  }
+  optional TemperatureCategoryEnum category = 1;
+  optional string recommendation_message = 2;
+  optional bool dangerous = 3;
+}
