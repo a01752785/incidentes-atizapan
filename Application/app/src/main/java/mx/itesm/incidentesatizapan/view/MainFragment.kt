@@ -149,7 +149,7 @@ class MainFragment : Fragment() {
 
     private fun showWindSpeedCategory(windSpeedCategory: WindSpeedCategory) {
         val alertDialog = androidx.appcompat.app.AlertDialog.Builder(requireContext())
-            .setTitle("Velocidad del viento " +
+            .setTitle("Alerta de velocidad del viento: " +
                     viewModel.getWindSpeedCategoryName(windSpeedCategory.category))
             .setMessage(windSpeedCategory.recommendationMessage)
             .setPositiveButton("Aceptar") { _, _ -> }
