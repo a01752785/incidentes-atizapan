@@ -75,14 +75,6 @@
                         android:gravity="center"
                         android:text="David Damián Galán" />
 
-                    <TextView
-                        android:id="@+id/textView17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="a01752785 " />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -99,13 +91,6 @@
                         android:gravity="center"
                         android:text="Harumi Cristal Manzano Yáñez" />
 
-                    <TextView
-                        android:id="@+id/textView19"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="a01751568 " />
                 </LinearLayout>
 
                 <LinearLayout
@@ -121,14 +106,6 @@
                         android:gravity="center"
                         android:text="Marco Barbosa Maruri" />
 
-                    <TextView
-                        android:id="@+id/textView23"
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="a01746163 " />
                 </LinearLayout>
 
                 <LinearLayout
@@ -144,13 +121,6 @@
                         android:gravity="center"
                         android:text="Sebastián Mora Ugalde" />
 
-                    <TextView
-                        android:id="@+id/textView23"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="a01746423 " />
                 </LinearLayout>
 
                 <LinearLayout
@@ -167,13 +137,6 @@
                         android:gravity="center"
                         android:text="Sebastián Burgos Alanís" />
 
-                    <TextView
-                        android:id="@+id/textView23"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="a01746459 " />
                 </LinearLayout>
 
                 <LinearLayout
@@ -190,13 +153,6 @@
                         android:gravity="center"
                         android:text="Adrián Bravo López" />
 
-                    <TextView
-                        android:id="@+id/textView19"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="a01752067 " />
                 </LinearLayout>
             </LinearLayout>
 
