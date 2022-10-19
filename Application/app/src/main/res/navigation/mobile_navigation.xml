@@ -59,4 +59,9 @@
             android:id="@+id/action_callsFragment_to_navigation_dashboard"
             app:destination="@id/navigation_dashboard" />
     </fragment>
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="mx.itesm.incidentesatizapan.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_creditos" />
 </navigation>
