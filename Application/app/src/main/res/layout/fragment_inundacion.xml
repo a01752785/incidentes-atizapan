@@ -115,7 +115,7 @@
                         android:id="@+id/textView16"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="▪ Si parece necesario evacuar el lugar, corte el suministro de todos los servicios públicos desde el interruptor principal y cierre la válvula principal del gas"
+                        android:text="▪ Si parece necesario evacuar el lugar, corte el suministro de todos los servicios públicos desde el interruptor principal y cierre la válvula principal del gas."
                         android:textColor="#000000" />
 
                     <TextView
@@ -195,7 +195,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:paddingTop="5dp"
-                        android:text="En caso de un inundación se enviara una notificación con el siguiente icono:"
+                        android:text="En caso de un inundación se enviara una notificación con el ícono que se muestra arriba."
                         android:textColor="#001D6D"
                         android:textStyle="bold" />
                 </LinearLayout>
