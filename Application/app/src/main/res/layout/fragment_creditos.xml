@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BlankFragment">
+    tools:context=".view.CreditosFragment">
 
 
     <ScrollView
@@ -236,19 +236,19 @@
                     android:id="@+id/textView25"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=" ▪React" />
+                    android:text="  ▪React" />
 
                 <TextView
                     android:id="@+id/textView27"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=" ▪Next" />
+                    android:text="  ▪Next" />
 
                 <TextView
                     android:id="@+id/textView28"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=" ▪Tailwindcss" />
+                    android:text="  ▪Tailwindcss" />
 
                 <TextView
                     android:id="@+id/textView29"
@@ -261,31 +261,31 @@
                     android:id="@+id/textView30"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=" ▪Docker" />
+                    android:text="  ▪Docker" />
 
                 <TextView
                     android:id="@+id/textView31"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=" ▪NGINX" />
+                    android:text="  ▪NGINX" />
 
                 <TextView
                     android:id="@+id/textView32"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=" ▪Express" />
+                    android:text="  ▪Express" />
 
                 <TextView
                     android:id="@+id/textView33"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=" ▪Node.js" />
+                    android:text="  ▪Node.js" />
 
                 <TextView
                     android:id="@+id/textView34"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=" ▪JWT" />
+                    android:text="  ▪JWT" />
 
 
             </LinearLayout>
