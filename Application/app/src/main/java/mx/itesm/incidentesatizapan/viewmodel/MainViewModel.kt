@@ -30,7 +30,7 @@ class MainViewModel : ViewModel() {
 
     fun clima(){
         climadata.value = Climadata.newBuilder().build()
-        climadata.value = model.getClima("eef42780d6mshc08bc5fad1ef6b2p146a49jsn4af0732a1828", 1)
+        climadata.value = model.getClima()
     }
 
     /**

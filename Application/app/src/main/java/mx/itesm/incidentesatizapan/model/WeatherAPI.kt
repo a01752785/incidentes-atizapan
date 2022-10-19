@@ -26,14 +26,14 @@ class WeatherAPI {
     /**
      * Funcion que hace la llamada al servicio de API del clima
      */
-    fun getClima(api_key: String, i : Int) : Climadata {
+    fun getClima() : Climadata {
         var clima1 = Climadata.newBuilder().build()
         val client = OkHttpClient()
         //Request con sus headers para la llamada GET
         val request = Request.Builder()
             .url("https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily?lat=19.5178211&lon=-99.3611396&units=metric&lang=es")
             .get()
-            .addHeader("X-RapidAPI-Key", api_key)
+            .addHeader("X-RapidAPI-Key", "141937812emshea9db2966ef2d27p12d09cjsnb24a8ed8aefa")
             .addHeader("X-RapidAPI-Host", "weatherbit-v1-mashape.p.rapidapi.com")
             .build()
             //eef42780d6mshc08bc5fad1ef6b2p146a49jsn4af0732a1828
@@ -49,12 +49,6 @@ class WeatherAPI {
             override fun onResponse(response: Response?) {
                 if(response!!.code() == 429){
                     Log.d("fallo","fallo")
-                    if(i == 1){
-                        clima1 = getClima("a2b8dbea17msh31a94be81358e11p1d310ajsn08b09c647c65",i+1)
-                    }
-                    if(i == 2){
-                        clima1 = getClima("5b3485ce59msh30281506cbfb394p144551jsn947ad79e1bbf",i+1)
-                    }
                 }
                 else {
                     val climabuilder: Climadata.Builder = Climadata.newBuilder()
