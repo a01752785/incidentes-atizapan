@@ -102,70 +102,70 @@
                         android:id="@+id/textView15"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="▪ Dirígete a la puerta de salida que esté más lejos del fuego "
+                        android:text="▪ Dirígete a la puerta de salida que esté más lejos del fuego. "
                         android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/textView16"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="▪ Aléjate lo más que puedas para no obstruir el trabajo de las brigadas de auxilio"
+                        android:text="▪ Aléjate lo más que puedas para no obstruir el trabajo de las brigadas de auxilio."
                         android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/textView24"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="▪ No abras puertas y ventanas, el fuego se extiende con el aire"
+                        android:text="▪ No abras puertas y ventanas, el fuego se extiende con el aire."
                         android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/textView61"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="▪ No uses elevadores "
+                        android:text="▪ No uses elevadores."
                         android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/textView60"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="▪ Si el fuego es de origen eléctrico no intentes apagarlo con agua "
+                        android:text="▪ Si el fuego es de origen eléctrico no intentes apagarlo con agua. "
                         android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/textView59"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="▪ Corta suministros de energía eléctrica y de gas"
+                        android:text="▪ Corta suministros de energía eléctrica y de gas."
                         android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/textView58"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="▪ Antes de abrir la puerta toca la perilla o manija, si está caliente no la abras"
+                        android:text="▪ Antes de abrir la puerta toca la perilla o manija, si está caliente no la abras."
                         android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/textView57"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="▪ Si se incendia tu ropa no corras, tírate al piso y rueda"
+                        android:text="▪ Si se incendia tu ropa no corras, tírate al piso y rueda."
                         android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/textView56"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="▪ Si hay gas y humo, desplázate a rastras y de ser posible tapate la nariz y boca con un trapo humedo"
+                        android:text="▪ Si hay gas y humo, desplázate a rastras y de ser posible tapate la nariz y boca con un trapo humedo."
                         android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/textView55"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="▪ No pierdas tiempo buscando objetos personales "
+                        android:text="▪ No pierdas tiempo buscando objetos personales. "
                         android:textColor="#000000" />
 
                     <TextView
@@ -194,7 +194,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:paddingTop="5dp"
-                        android:text="En caso de un incendio se enviara una notificación con el siguiente icono."
+                        android:text="En caso de un incendio se enviará una notificación con el ícono que se muestra arriba."
                         android:textColor="#961313"
                         android:textStyle="bold" />
                 </LinearLayout>
