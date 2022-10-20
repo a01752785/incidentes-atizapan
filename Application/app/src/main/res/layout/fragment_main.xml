@@ -665,14 +665,14 @@
                         android:id="@+id/tvAirQualityTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Velocidad del Aire"
+                        android:text="Velocidad del Viento"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                     <TextView
                         android:id="@+id/tvAirSpeed"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Buena" />
+                        android:text="2 m/s" />
 
                     <ImageView
                         android:id="@+id/imgAirQuality"
