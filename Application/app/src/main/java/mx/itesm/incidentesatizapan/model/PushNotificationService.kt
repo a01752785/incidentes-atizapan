@@ -1,9 +1,12 @@
 package mx.itesm.incidentesatizapan.model
 
 import android.util.Log
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import mx.itesm.incidentesatizapan.R
 
 /**
  * @author Sebastian Mora
@@ -23,5 +26,13 @@ class PushNotificationService : FirebaseMessagingService(){
 
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
+        val notification = NotificationCompat.Builder(this)
+            .setContentTitle(message.notification?.title)
+            .setContentText(message.notification?.body)
+            .setSmallIcon(R.mipmap.ic_launcher)
+            .build()
+
+        val manager = NotificationManagerCompat.from(applicationContext)
+        manager.notify(123, notification)
     }
 }
