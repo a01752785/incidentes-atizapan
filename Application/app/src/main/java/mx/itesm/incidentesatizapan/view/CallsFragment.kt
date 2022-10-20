@@ -53,6 +53,9 @@ class CallsFragment : Fragment() {
         binding.btnLink.setOnClickListener{
             findNavController().navigate(CallsFragmentDirections.actionCallsFragmentToNavigationDashboard())
         }
+        binding.btnCreditos.setOnClickListener {
+            findNavController().navigate(CallsFragmentDirections.actionNavigationCallsToBlankFragment())
+        }
         binding.imgbtnProteccionCivil.setOnClickListener{
 
             if (ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED){

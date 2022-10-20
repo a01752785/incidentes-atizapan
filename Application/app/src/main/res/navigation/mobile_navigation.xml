@@ -58,10 +58,13 @@
         <action
             android:id="@+id/action_callsFragment_to_navigation_dashboard"
             app:destination="@id/navigation_dashboard" />
+        <action
+            android:id="@+id/action_navigation_calls_to_blankFragment"
+            app:destination="@id/creditosFragment" />
     </fragment>
     <fragment
-        android:id="@+id/blankFragment"
-        android:name="mx.itesm.incidentesatizapan.BlankFragment"
-        android:label="fragment_blank"
+        android:id="@+id/creditosFragment"
+        android:name="mx.itesm.incidentesatizapan.view.CreditosFragment"
+        android:label="fragment_creditos"
         tools:layout="@layout/fragment_creditos" />
 </navigation>
