@@ -525,6 +525,28 @@
                         android:text="¿Qué hacer en una situación de riesgo?" />
                 </LinearLayout>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity = "end"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/btnCreditos"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/creditos" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity = "center"
+                    android:text="Créditos" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
