@@ -63,7 +63,8 @@ class MainFragment : Fragment() {
     private fun subscribeWeather() {
         viewModel.climadata.observe(viewLifecycleOwner){ climaData ->
             if(climaData == Climadata.newBuilder().build()){
-                notifyConnectionFailure()
+                // TODO: Remove this bypass
+                // notifyConnectionFailure()
             }
             else{
                 populateWeatherInfo(climaData)
