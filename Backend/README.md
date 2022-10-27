@@ -1,30 +1,41 @@
 # Backend
+
 This is where all the code that qualifies as the Backend of the project is housed.
 
 ## Technology We Use For Now
-- Express 
+
+- Express
 - Axios
 - Mongoose
 - Docker
 - Firebase FCM
 
-## Micro-services 
+## Micro-services
+
 We are aiming to make the backend modularized into microservices, which are represented by a Docker container. All the microservices will be "united" in a Docker Compose that exposes and organizes each one of them.
 
 ### Microservices Available
+
 - Notification Service
 - Authentication Service
-- Databse Service 
+- Databse Service
 - Incident Service
 
+### Configuration
+
+The server has some password and security restrictions you nedd to set, they got a default value, but it's super _ALERT : change them in production_, always make sure to change at least :
+
+- mongo-init.js : Change the username and password for database
+
 ### Deploying
+
 > _WARNING : To run succesfully you should have all the microservices running in your machine._
 
 Each one of the microservices can be compressed in a docker image using the dockerfile, this repository is provided with a docker compose file thaht will handle all the images for you (and even the database!).
 
-> Important : If you want to use docker compose, you will have to set the credentials for the Mongo Container in a _.env_ file, or you can simply cutt off those lines in _docker-compose-yml_. 
+> Important : If you want to use docker compose, you will have to set the credentials for the Mongo Container in a _.env_ file, or you can simply cutt off those lines in _docker-compose-yml_.
 
-If you want to compile a separate image : 
+If you want to compile a separate image :
 
 `docker build -t SERVICE_NAME:VERSION .`
 
