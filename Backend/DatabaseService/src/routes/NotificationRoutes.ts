@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-//Create Incident
+//Create Notification
 router.post('/', AuthService.verifyToken, (req , res) => {
     let notification = req.body.notification;
     if (!notification) {
