@@ -45,16 +45,16 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <!-- tengo duda Aidrian -->
-        <activity
-            android:name=".img_Inundacion"
-            android:exported="false" />
+
+
 
         <activity
             android:name=".view.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- Firebase Notification Service -->
 
+        <!-- Se tiene que sacar una API key en Google Cloud de Google Maps SDK y remplazar el valor de android:value con la API-Key
+        o tambien se puede crear una variable local en local.properties con el nombre: MAPS_API_KEY y el valor de la API key-->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
